@@ -77,8 +77,7 @@ ENDC
 
 MAIN: 
     CLRF TRISD; Ponemos como salida a todo el puerto B
-    MOVLW 0XFF; Movemos el dato 11111111 al registro de trabajo W
-    MOVWF TRISB; Llevamos el valor del registro de trabajo W hacia el file TRISB
+    SETF TRISB; Usamos la senticia SETF para ahorrar ciclos de instr.
 START: ; Ponemos la etiqueta como alias de la funcion inferior 
     MOVF PORTB, W ; Movemos el valor del file PORTB y lo guardamos en el registro W
     MOVWF variableAux; Llevamos el valor del registro de trabako hacia el operando "variableAux"
