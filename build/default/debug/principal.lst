@@ -1,4 +1,4 @@
-MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  18:00:52         PAGE  1
+MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  17:59:26         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -57,7 +57,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00032   CONFIG  ICPRT = OFF           ; Dedicated In-Circuit Debug/Programming Port (ICPORT) Enable bit (ICPOR
                             T disabled)
                       00033   CONFIG  XINST = OFF           ; Extended Instruction Set Enable bit (Instruction set extension and Ind
-MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  18:00:52         PAGE  2
+MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  17:59:26         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -116,7 +116,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                             rupcion
 000018 EF?? F???      00075     GOTO SER_BAJA_PRIOR; Ponemos el alias
                       00076     ORG 0X20; Damos la direccion de memoria para la rutina principal
-MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  18:00:52         PAGE  3
+MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  17:59:26         PAGE  3
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -141,7 +141,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 0000B0                00092 SER_BAJA_PRIOR: ; Ponemos el alias 
 0000B0 0010           00093     RETFIE ; Ponemos el retorno de interrupciones 
                       00094     END ;Finalizamos la rutina principal
-MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  18:00:52         PAGE  4
+MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  17:59:26         PAGE  4
 
 
 SYMBOL TABLE
@@ -200,7 +200,7 @@ BRG16                             00000003
 BRGH                              00000002
 BSR                               00000FE0
 BTOEE                             00000004
-MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  18:00:52         PAGE  5
+MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  17:59:26         PAGE  5
 
 
 SYMBOL TABLE
@@ -259,7 +259,7 @@ CM2                               00000002
 CMCON                             00000FB4
 CMIE                              00000006
 CMIF                              00000006
-MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  18:00:52         PAGE  6
+MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  17:59:26         PAGE  6
 
 
 SYMBOL TABLE
@@ -318,7 +318,7 @@ EEIP                              00000004
 EEPGD                             00000007
 ENDP0                             00000003
 ENDP1                             00000004
-MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  18:00:52         PAGE  7
+MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  17:59:26         PAGE  7
 
 
 SYMBOL TABLE
@@ -377,7 +377,7 @@ HLVDL3                            00000003
 I2C_DAT                           00000005
 I2C_READ                          00000002
 I2C_START                         00000003
-MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  18:00:52         PAGE  8
+MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  17:59:26         PAGE  8
 
 
 SYMBOL TABLE
@@ -436,7 +436,7 @@ LATA6                             00000006
 LATB                              00000F8A
 LATB0                             00000000
 LATB1                             00000001
-MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  18:00:52         PAGE  9
+MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  17:59:26         PAGE  9
 
 
 SYMBOL TABLE
@@ -495,7 +495,7 @@ NOT_RI                            00000004
 NOT_T1SYNC                        00000002
 NOT_T3SYNC                        00000002
 NOT_TO                            00000003
-MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  18:00:52         PAGE 10
+MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  17:59:26         PAGE 10
 
 
 SYMBOL TABLE
@@ -554,7 +554,7 @@ PORTA                             00000F80
 PORTB                             00000F81
 PORTC                             00000F82
 PORTD                             00000F83
-MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  18:00:52         PAGE 11
+MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  17:59:26         PAGE 11
 
 
 SYMBOL TABLE
@@ -613,7 +613,7 @@ RC6                               00000006
 RC7                               00000007
 RCEN                              00000003
 RCIDL                             00000006
-MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  18:00:52         PAGE 12
+MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  17:59:26         PAGE 12
 
 
 SYMBOL TABLE
@@ -672,7 +672,7 @@ SPP0                              00000000
 SPP1                              00000001
 SPP2                              00000002
 SPP3                              00000003
-MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  18:00:52         PAGE 13
+MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  17:59:26         PAGE 13
 
 
 SYMBOL TABLE
@@ -731,7 +731,7 @@ T0CS                              00000005
 T0IE                              00000005
 T0IF                              00000002
 T0IP                              00000002
-MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  18:00:52         PAGE 14
+MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  17:59:26         PAGE 14
 
 
 SYMBOL TABLE
@@ -790,7 +790,7 @@ TMR2IF                            00000001
 TMR2IP                            00000001
 TMR2ON                            00000002
 TMR3                              00000FB2
-MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  18:00:52         PAGE 15
+MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  17:59:26         PAGE 15
 
 
 SYMBOL TABLE
@@ -849,7 +849,7 @@ TRISE0                            00000000
 TRISE1                            00000001
 TRISE2                            00000002
 TRMT                              00000001
-MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  18:00:52         PAGE 16
+MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  17:59:26         PAGE 16
 
 
 SYMBOL TABLE
@@ -908,7 +908,7 @@ URSTIF                            00000000
 USBEN                             00000003
 USBIE                             00000005
 USBIF                             00000005
-MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  18:00:52         PAGE 17
+MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  17:59:26         PAGE 17
 
 
 SYMBOL TABLE
@@ -967,7 +967,7 @@ _CP2_OFF_5L                       000000FF
 _CP2_ON_5L                        000000FB
 _CP3_OFF_5L                       000000FF
 _CP3_ON_5L                        000000F7
-MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  18:00:52         PAGE 18
+MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  17:59:26         PAGE 18
 
 
 SYMBOL TABLE
@@ -1026,7 +1026,7 @@ _LPT1OSC_ON_3H                    000000FF
 _LVP_OFF_4L                       000000FB
 _LVP_ON_4L                        000000FF
 _MCLRE_OFF_3H                     0000007F
-MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  18:00:52         PAGE 19
+MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  17:59:26         PAGE 19
 
 
 SYMBOL TABLE
@@ -1085,13 +1085,15 @@ _WRTD_OFF_6H                      000000FF
 _WRTD_ON_6H                       0000007F
 _XINST_OFF_4L                     000000BF
 _XINST_ON_4L                      000000FF
-MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  18:00:52         PAGE 20
+MPASM 5.87                     PRINCIPAL.ASM   6-6-2020  17:59:26         PAGE 20
 
 
 SYMBOL TABLE
   LABEL                             VALUE 
 
 __18F4550                         00000001
+__DEBUG                           
+__MPLAB_DEBUGGER_SIMULATOR        1
 variableAux                       00000000
 variableCuenta                    00000001
 

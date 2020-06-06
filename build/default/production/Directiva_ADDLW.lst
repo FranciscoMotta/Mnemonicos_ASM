@@ -1,0 +1,44 @@
+MPASM 5.87               DIRECTIVA_ADDLW.ASM   6-6-2020  18:02:41         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ; DIRECTIVA ADDLW 
+                      00002     ;LA APLICACIÓN Y EL ENTENDIMIENTO DE ESTA DIRECTIVA ES MUY SIMPLE Y SIMILAR A LA DIRECTIVA ANTERIOR 
+                            ADDWF F, D, A
+                      00003     ;LA DIFERENCIA CON LA SENTENCIA ANTERIOR ES QUE, EN VEZ DE SUMAR CON UN FILE, SE VA A SUMAR CON UN V
+                            ALOR
+                      00004     ;LITERAL PUESTO DE MANERA PREDETERMINADA 
+                      00005     
+                      00006     CBLOCK 0x00 
+  00000000            00007         auxiliar  
+                      00008     ENDC
+                      00009     ORG 0X0000; Definimos el vector 0x0000 como la funcion principal
+000000 EF?? F???      00010     GOTO MAIN; Asignamos el alías a la dirección anterior 
+                      00011     ORG 0X0020 ; Elegimos el vector 0x0020 como la pos de la rutina principal
+                      00012     
+000020                00013 MAIN:; ; damos el alías de la rutina principal
+000020 0E14           00014     MOVLW .20; Movemos el dato literal 20 hacia el registro W de trabajo
+000022 0F0A           00015     ADDLW .10; sumamos el valor de W con el dato literal 10 y se guarda en W
+                      00016     ; Acá podemos aplicar otra diferencia es es porque el valor de la suma 
+                      00017     ;No se puede guardar en F, debido a al poner F se supondría que debe guardar 
+                      00018     ;En la variable parte de la suma, pero en este caso, ese lugar lo toma un 
+                      00019     ;dalo literal.
+000024 6E00           00020     MOVWF auxiliar; Movemos el valor de W hacía la variable auxiliar 
+                      00021     END 
+MPASM 5.87               DIRECTIVA_ADDLW.ASM   6-6-2020  18:02:41         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+MAIN                              00000020
+__18F4550                         00000001
+auxiliar                          00000000
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

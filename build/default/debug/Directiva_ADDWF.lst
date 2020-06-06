@@ -1,0 +1,104 @@
+MPASM 5.87               DIRECTIVA_ADDWF.ASM   6-6-2020  18:02:58         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;Primera directiva de manejo de bytes 
+                      00002 ;************ ADDWF F,D,A ********************
+                      00003 ;    MOVLW .30 ;Movemos un dato literal al registro de trabajo W
+                      00004 ;    MOVWF 0X20; Almacenamos el valor de W en dirección 0x20
+                      00005 ;    MOVLW .12; Movemos el dato literal al registro de trabajo
+                      00006 ;    ADDWF 0X20, F, 0; Tenemos 30 en la dirección 0x20 y tenemos 
+                      00007     ; 12 en el registro de trabajo y los sumamos.
+                      00008     ; 30 + 12 = 42, el dato resultante se guarda en la dirección
+                      00009     ;Absoluta 0x20
+                      00010 ;*********** EJEMPLOS *****************
+                      00011     CBLOCK 0X00 ; Creamos un bloque para las variables que vamos a usar
+  00000000            00012         primeraVariable ; Creamos una variable en 0x001 
+  00000001            00013         segundaVariable ; Creamos una variable en 0x002
+                      00014     ENDC 
+                      00015     ORG 0X0000
+000000 EF?? F???      00016     GOTO MAIN 
+                      00017     ORG 0X0008 ; Definimos el vector para la rutina de servicio a las interrupciones de alta prior
+000008 EF?? F???      00018     GOTO ALTA_PRIOR ; Damos un alias a ese vector 
+                      00019     ORG 0X0018 ; Definimos el vector para las baja prioridad
+000018 EF?? F???      00020     GOTO BAJA_PRIOR ; Damos el alias 
+                      00021     ORG 0X0020 ;Elegimos la posicion 0x0020 para la rutina principal
+000020                00022 MAIN:
+000020 0E0C           00023     MOVLW .12 ; Movemos el dato literal al registro W
+000022 6E00           00024     MOVWF primeraVariable; Movemos el dato a la varaible respectiva
+000024 0E0B           00025     MOVLW .11 ;Movemos el dato literal al registro E
+000026 2600           00026     ADDWF primeraVariable, F, 0; Sumamos el valor de W
+                      00027     ;con el valor de la primera variable y se guarda en ella misma
+000028 0E0E           00028     MOVLW .14 ; Movemos el dato literal hacia W 
+00002A 2600           00029     ADDWF primeraVariable, F, 0; Sumamos el dato de W con el valor
+                      00030     ;de la suma anterior que tenía primeraVariable
+                      00031     ;*********** RESUMEN **************
+                      00032 ;     ; W = 12
+                      00033 ;       W > primeraVariable -> primeraVariable = 12 
+                      00034 ;       W = 11
+                      00035 ;       primeraVariable = primeraVariable(12) + W (11)
+                      00036 ;       primeraVariable = 23
+                      00037 ;       W = 14 
+                      00038 ;       primeraVariable = primeraVariable(23) + W(14)
+                      00039 ;       primeraVariable = 37 
+                      00040 ;       ENTENDER ESTA DIRECTIVA ES TRATAR DE ENTENDER MÁS A FONDO
+                      00041 ;       LA SINTAXIS PROPIA DEL LENGUAJE ASM. POR UNA PARTE, 
+                      00042 ;       SE DEBE ENTENDER EL FUNCIONAMIENTO DEL MNEMÓNICO ADDWF F,D,A
+                      00043 ;       ADDWF SIGNIFICA SUMAR EL VALOR DE W CON EL VALOR QUE TENGA
+                      00044 ;       UN DETERMINADO FILE F, QUE PUEDE SER UNA VARIABLE, 
+                      00045 ;       DIRECCIÓN EN LA MEMORIA DE DATOS O UN OPERANDO(PUERTOS).
+                      00046 ;       ANTES DE LA PRIMERA COMA SE OBSERVA UN "F" 
+                      00047 ;       EL CUAL HACE REFERENCIA AL FILE QUE SE VA A SUMAR CON "W"
+                      00048 ;       POR EJEMPLO:
+                      00049 ;       ADDWF PORTX = SUMAR A W LO QUE ESTÉ EN EL PUERTO X
+                      00050 ;       ADDWF 0X20 = SUMAR A W EL VALOR GUARDADO EN LA DIRECCIÓN 0X20
+                      00051 ;       ADDWF VAR = SUMAR A W EL VALOR QUE TENGA VAR
+                      00052 ;       A LA DERECHA DE LA PRIMERA COMA SE PUEDE VER UN "D", QUE 
+                      00053 ;       HACE REFERENCIA A LA DIRECCIÓN DE GUARDADO DEL RESULTADO DE LA SUMA
+MPASM 5.87               DIRECTIVA_ADDWF.ASM   6-6-2020  18:02:58         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00054 ;       EN OTRAS PALABRAS, DONDE SE VA A GUARDAR EL RESULTADO. 
+                      00055 ;       EJEMPLO:
+                      00056 ;       ADDWF PORTB, W = SE VA A SUMAR W CON EL VALOR DE PORTB Y SE VA A GUARDAR EL VALOR EN EL REGISTRO
+                             W
+                      00057 ;       ADDWF VAR, F = SE VA A SUMAR W CON VAR Y SE VA A GUARDAR EN VAR
+                      00058 ;       ES NECESARIO PRECISAR QUE, EN RESUMIDAS CUENTAS, SI COLOCAS W SE VA A GUARDAR EN W Y SI COLOCAS 
+                            F
+                      00059 ;       SE VA A GUARDAR EN EL OPERANDO O DIRECCIÓN DE MEMORIA QUE USES.
+                      00060 ;       POR ULTIMO, VEMOS AL FINAL UN A, QUE HACE REFERENCIA A LA FORMA DE GUARDADO, SI SERÁ ABSOLUTA O 
+                            RELATIVA 
+                      00061 ;       AL SRAM (PUEDE SER NO USADO PERO SE RECOMIENDA HACERLO PARA MANTENER LAS BUENAS PRACTICAS)
+                      00062 ;    */ 
+                      00063     ORG 0X0C0
+0000C0                00064 ALTA_PRIOR:
+0000C0 0010           00065     RETFIE 
+                      00066     ORG 0X0D0
+0000D0                00067 BAJA_PRIOR:
+0000D0 0010           00068     RETFIE
+                      00069     END 
+MPASM 5.87               DIRECTIVA_ADDWF.ASM   6-6-2020  18:02:58         PAGE  3
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ALTA_PRIOR                        000000C0
+BAJA_PRIOR                        000000D0
+MAIN                              00000020
+__18F4550                         00000001
+__DEBUG                           
+__MPLAB_DEBUGGER_SIMULATOR        1
+primeraVariable                   00000000
+segundaVariable                   00000001
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

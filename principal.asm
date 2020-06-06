@@ -62,10 +62,10 @@
 ; CONFIG7H
   CONFIG  EBTRB = OFF           ; Boot Block Table Read Protection bit (Boot block (000000-0007FFh) is not protected from table reads executed in other blocks)
 
-CBLOCK
-  variableAux ;Defenicion de la variable
-  variableCuenta
-ENDC
+    CBLOCK 0x00
+      variableAux;Defenicion de la variable
+      variableCuenta
+    ENDC
 
     ORG 0X000; Damos la dirección de inicio para la memoria de programa
     GOTO MAIN ; Usamos el alias para designar que será el MAIN
@@ -85,10 +85,10 @@ START: ; Ponemos la etiqueta como alias de la funcion inferior
     MOVF variableAux, W; Llevamos el valor de variableAux hacia el registro de trabajo W
     MOVWF LATD; Llevamos el valor de W havia el puerto D
     GOTO START; Retornamos al posicion de memoria con el alias START
-ORG 0X0A0; Damos una direccion en la memoria de programa para la rutina de servicio a la interrupcion de alta prior
-    SER_ALTA_PRIOR: ; Damos el alias de la rutina de servicio 
+    ORG 0X0A0; Damos una direccion en la memoria de programa para la rutina de servicio a la interrupcion de alta prior
+SER_ALTA_PRIOR: ; Damos el alias de la rutina de servicio 
     RETFIE ;Usamos el retorno de interrupciones
-ORG 0X0B0; Hacemos lo mismo para la funcion de servicio de la interrupcion de baja prior 
-    SER_BAJA_PRIOR: ; Ponemos el alias 
+    ORG 0X0B0; Hacemos lo mismo para la funcion de servicio de la interrupcion de baja prior 
+SER_BAJA_PRIOR: ; Ponemos el alias 
     RETFIE ; Ponemos el retorno de interrupciones 
-END ;Finalizamos la rutina principal
+    END ;Finalizamos la rutina principal

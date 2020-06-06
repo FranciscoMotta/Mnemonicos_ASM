@@ -30,7 +30,7 @@
         <targetDevice>PIC18F4550</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>PICkit3PlatformTool</platformTool>
+        <platformTool>Simulator</platformTool>
         <languageToolchain>MPASMWIN</languageToolchain>
         <languageToolchainVersion>5.87</languageToolchainVersion>
         <platform>3</platform>

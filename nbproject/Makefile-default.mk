@@ -91,7 +91,7 @@ endif
 	${MAKE}  -f nbproject/Makefile-default.mk dist/${CND_CONF}/${IMAGE_TYPE}/primerCodeAsm.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 
 MP_PROCESSOR_OPTION=18f4550
-MP_LINKER_DEBUG_OPTION=-r=ROM@0x7DC0:0x7FFF -r=RAM@GPR:0x3F4:0x3FF
+MP_LINKER_DEBUG_OPTION= 
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
@@ -99,7 +99,7 @@ ${OBJECTDIR}/principal.o: principal.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/principal.o.d 
 	@${RM} ${OBJECTDIR}/principal.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/principal.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_PK3=1 -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/principal.lst\" -e\"${OBJECTDIR}/principal.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/principal.o\" \"principal.asm\" 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/principal.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/principal.lst\" -e\"${OBJECTDIR}/principal.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/principal.o\" \"principal.asm\" 
 	@${DEP_GEN} -d "${OBJECTDIR}/principal.o"
 	@${FIXDEPS} "${OBJECTDIR}/principal.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
@@ -107,7 +107,7 @@ ${OBJECTDIR}/Directiva_ADDWF.o: Directiva_ADDWF.asm  nbproject/Makefile-${CND_CO
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/Directiva_ADDWF.o.d 
 	@${RM} ${OBJECTDIR}/Directiva_ADDWF.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Directiva_ADDWF.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_PK3=1 -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Directiva_ADDWF.lst\" -e\"${OBJECTDIR}/Directiva_ADDWF.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/Directiva_ADDWF.o\" \"Directiva_ADDWF.asm\" 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Directiva_ADDWF.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Directiva_ADDWF.lst\" -e\"${OBJECTDIR}/Directiva_ADDWF.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/Directiva_ADDWF.o\" \"Directiva_ADDWF.asm\" 
 	@${DEP_GEN} -d "${OBJECTDIR}/Directiva_ADDWF.o"
 	@${FIXDEPS} "${OBJECTDIR}/Directiva_ADDWF.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
@@ -115,7 +115,7 @@ ${OBJECTDIR}/Directiva_ADDLW.o: Directiva_ADDLW.asm  nbproject/Makefile-${CND_CO
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/Directiva_ADDLW.o.d 
 	@${RM} ${OBJECTDIR}/Directiva_ADDLW.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Directiva_ADDLW.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_PK3=1 -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Directiva_ADDLW.lst\" -e\"${OBJECTDIR}/Directiva_ADDLW.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/Directiva_ADDLW.o\" \"Directiva_ADDLW.asm\" 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Directiva_ADDLW.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Directiva_ADDLW.lst\" -e\"${OBJECTDIR}/Directiva_ADDLW.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/Directiva_ADDLW.o\" \"Directiva_ADDLW.asm\" 
 	@${DEP_GEN} -d "${OBJECTDIR}/Directiva_ADDLW.o"
 	@${FIXDEPS} "${OBJECTDIR}/Directiva_ADDLW.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
@@ -151,7 +151,7 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 dist/${CND_CONF}/${IMAGE_TYPE}/primerCodeAsm.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION)  -w -x -u_DEBUG -z__ICD2RAM=1 -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"   -z__MPLAB_BUILD=1  -z__MPLAB_DEBUG=1 -z__MPLAB_DEBUGGER_PK3=1 $(MP_LINKER_DEBUG_OPTION) -odist/${CND_CONF}/${IMAGE_TYPE}/primerCodeAsm.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
+	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION)  -w -x -u_DEBUG -z__ICD2RAM=1 -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"   -z__MPLAB_BUILD=1  -z__MPLAB_DEBUG=1 -z__MPLAB_DEBUGGER_SIMULATOR=1 $(MP_LINKER_DEBUG_OPTION) -odist/${CND_CONF}/${IMAGE_TYPE}/primerCodeAsm.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
 else
 dist/${CND_CONF}/${IMAGE_TYPE}/primerCodeAsm.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
