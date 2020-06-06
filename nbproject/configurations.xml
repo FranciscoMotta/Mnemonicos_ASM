@@ -14,6 +14,7 @@
                    projectFiles="true">
       <itemPath>principal.asm</itemPath>
       <itemPath>Directiva_ADDWF.asm</itemPath>
+      <itemPath>Directiva_ADDLW.asm</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
