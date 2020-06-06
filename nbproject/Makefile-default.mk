@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=principal.asm
+SOURCEFILES_QUOTED_IF_SPACED=principal.asm Directiva_ADDWF.asm
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/principal.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/principal.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/principal.o ${OBJECTDIR}/Directiva_ADDWF.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/principal.o.d ${OBJECTDIR}/Directiva_ADDWF.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/principal.o
+OBJECTFILES=${OBJECTDIR}/principal.o ${OBJECTDIR}/Directiva_ADDWF.o
 
 # Source Files
-SOURCEFILES=principal.asm
+SOURCEFILES=principal.asm Directiva_ADDWF.asm
 
 
 
@@ -103,6 +103,14 @@ ${OBJECTDIR}/principal.o: principal.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${DEP_GEN} -d "${OBJECTDIR}/principal.o"
 	@${FIXDEPS} "${OBJECTDIR}/principal.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
+${OBJECTDIR}/Directiva_ADDWF.o: Directiva_ADDWF.asm  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Directiva_ADDWF.o.d 
+	@${RM} ${OBJECTDIR}/Directiva_ADDWF.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Directiva_ADDWF.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_PK3=1 -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Directiva_ADDWF.lst\" -e\"${OBJECTDIR}/Directiva_ADDWF.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/Directiva_ADDWF.o\" \"Directiva_ADDWF.asm\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/Directiva_ADDWF.o"
+	@${FIXDEPS} "${OBJECTDIR}/Directiva_ADDWF.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	
 else
 ${OBJECTDIR}/principal.o: principal.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -111,6 +119,14 @@ ${OBJECTDIR}/principal.o: principal.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/principal.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/principal.lst\" -e\"${OBJECTDIR}/principal.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/principal.o\" \"principal.asm\" 
 	@${DEP_GEN} -d "${OBJECTDIR}/principal.o"
 	@${FIXDEPS} "${OBJECTDIR}/principal.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	
+${OBJECTDIR}/Directiva_ADDWF.o: Directiva_ADDWF.asm  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Directiva_ADDWF.o.d 
+	@${RM} ${OBJECTDIR}/Directiva_ADDWF.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Directiva_ADDWF.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Directiva_ADDWF.lst\" -e\"${OBJECTDIR}/Directiva_ADDWF.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/Directiva_ADDWF.o\" \"Directiva_ADDWF.asm\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/Directiva_ADDWF.o"
+	@${FIXDEPS} "${OBJECTDIR}/Directiva_ADDWF.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 endif
 
