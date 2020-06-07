@@ -19,6 +19,7 @@
       <itemPath>Mnemonico_ANDWF.asm</itemPath>
       <itemPath>Mnemonico_ANDLW.asm</itemPath>
       <itemPath>ADDWF_ADDWFC_ANDWF_ejemplo.asm</itemPath>
+      <itemPath>Mnemonico_CLRF.asm</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
