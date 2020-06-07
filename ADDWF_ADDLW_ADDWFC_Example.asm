@@ -49,7 +49,7 @@ START:
     ADDWF 0X20, F; pos 0X20 = pos 0X20 + W = 240 + 60 = 300 = 1 0010 1100 => pos 0X20 = 0010 1100 = 44 ; Carry Status = 1  
     MOVLW .14; W = 14 
     ADDWFC 0X20, W ; W = W + pos 0x20 + C => W = 14 + 44 + 1 = 59 => 3B = 00111011
-    MOVWF LATD ; LATD = 59
+    MOVWF LATD ; LATD = 59 y se muestra por ese puerto que puede variar 
     GOTO START;
 INT_ALTA_PRIOR:
     RETFIE 

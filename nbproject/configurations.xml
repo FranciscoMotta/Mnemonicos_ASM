@@ -17,6 +17,7 @@
       <itemPath>Directiva_ADDLW.asm</itemPath>
       <itemPath>mnemonico_ADDWFC.asm</itemPath>
       <itemPath>ADDWFC_Example.asm</itemPath>
+      <itemPath>ADDWF_ADDLW_ADDWFC_Example.asm</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

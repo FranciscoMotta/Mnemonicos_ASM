@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=principal.asm Directiva_ADDWF.asm Directiva_ADDLW.asm mnemonico_ADDWFC.asm ADDWFC_Example.asm
+SOURCEFILES_QUOTED_IF_SPACED=principal.asm Directiva_ADDWF.asm Directiva_ADDLW.asm mnemonico_ADDWFC.asm ADDWFC_Example.asm ADDWF_ADDLW_ADDWFC_Example.asm
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/principal.o ${OBJECTDIR}/Directiva_ADDWF.o ${OBJECTDIR}/Directiva_ADDLW.o ${OBJECTDIR}/mnemonico_ADDWFC.o ${OBJECTDIR}/ADDWFC_Example.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/principal.o.d ${OBJECTDIR}/Directiva_ADDWF.o.d ${OBJECTDIR}/Directiva_ADDLW.o.d ${OBJECTDIR}/mnemonico_ADDWFC.o.d ${OBJECTDIR}/ADDWFC_Example.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/principal.o ${OBJECTDIR}/Directiva_ADDWF.o ${OBJECTDIR}/Directiva_ADDLW.o ${OBJECTDIR}/mnemonico_ADDWFC.o ${OBJECTDIR}/ADDWFC_Example.o ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/principal.o.d ${OBJECTDIR}/Directiva_ADDWF.o.d ${OBJECTDIR}/Directiva_ADDLW.o.d ${OBJECTDIR}/mnemonico_ADDWFC.o.d ${OBJECTDIR}/ADDWFC_Example.o.d ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/principal.o ${OBJECTDIR}/Directiva_ADDWF.o ${OBJECTDIR}/Directiva_ADDLW.o ${OBJECTDIR}/mnemonico_ADDWFC.o ${OBJECTDIR}/ADDWFC_Example.o
+OBJECTFILES=${OBJECTDIR}/principal.o ${OBJECTDIR}/Directiva_ADDWF.o ${OBJECTDIR}/Directiva_ADDLW.o ${OBJECTDIR}/mnemonico_ADDWFC.o ${OBJECTDIR}/ADDWFC_Example.o ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o
 
 # Source Files
-SOURCEFILES=principal.asm Directiva_ADDWF.asm Directiva_ADDLW.asm mnemonico_ADDWFC.asm ADDWFC_Example.asm
+SOURCEFILES=principal.asm Directiva_ADDWF.asm Directiva_ADDLW.asm mnemonico_ADDWFC.asm ADDWFC_Example.asm ADDWF_ADDLW_ADDWFC_Example.asm
 
 
 
@@ -135,6 +135,14 @@ ${OBJECTDIR}/ADDWFC_Example.o: ADDWFC_Example.asm  nbproject/Makefile-${CND_CONF
 	@${DEP_GEN} -d "${OBJECTDIR}/ADDWFC_Example.o"
 	@${FIXDEPS} "${OBJECTDIR}/ADDWFC_Example.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
+${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o: ADDWF_ADDLW_ADDWFC_Example.asm  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o.d 
+	@${RM} ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.lst\" -e\"${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o\" \"ADDWF_ADDLW_ADDWFC_Example.asm\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o"
+	@${FIXDEPS} "${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	
 else
 ${OBJECTDIR}/principal.o: principal.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -175,6 +183,14 @@ ${OBJECTDIR}/ADDWFC_Example.o: ADDWFC_Example.asm  nbproject/Makefile-${CND_CONF
 	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/ADDWFC_Example.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/ADDWFC_Example.lst\" -e\"${OBJECTDIR}/ADDWFC_Example.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/ADDWFC_Example.o\" \"ADDWFC_Example.asm\" 
 	@${DEP_GEN} -d "${OBJECTDIR}/ADDWFC_Example.o"
 	@${FIXDEPS} "${OBJECTDIR}/ADDWFC_Example.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	
+${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o: ADDWF_ADDLW_ADDWFC_Example.asm  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o.d 
+	@${RM} ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.lst\" -e\"${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o\" \"ADDWF_ADDLW_ADDWFC_Example.asm\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o"
+	@${FIXDEPS} "${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 endif
 
