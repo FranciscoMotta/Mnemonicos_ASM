@@ -25,11 +25,10 @@
   CONFIG  LPT1OSC = OFF         ; Low-Power Timer 1 Oscillator Enable bit (Timer1 configured for higher power operation)
   CONFIG  MCLRE = ON            ; MCLR Pin Enable bit (MCLR pin enabled; RE3 input pin disabled)
 
-;***************** USO DE LA MNEMONICO ANDLW L,F  ****************************
-;El empleo de este mnemonico es bastante simple pues realiza la operacion de AND entre el registro W y un dato literal 
+;***************** USO DE LA MNEMONICO ANDWF L,F en un ejemplo acompañado del mnemonico ADDWF Y ADDWFC  ****************************
 ;********** EJEMPLO ****************
     CBLOCK 0x00
-	variablePrueba
+	variablePrueba; Creamos una "variable" en la posición 0x000 de la memoria de programas 
     ENDC 
     
     ORG 0X000
