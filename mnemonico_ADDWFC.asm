@@ -77,36 +77,36 @@ MAIN:
     CLRF TRISD ; Movemos el dato 0x00 hacia el registro TRISD para poner como salida a puerto D
     GOTO START ; Vamos a la direccion con el alias de START 
 START:
-    CLRF LATD; Limpiamos el registro W
-    MOVLW .14 ; Movemos el dato literal 14 hacía el registro W
-    MOVWF 0X10; Movemos el dato de W hacía la dirección 0X10 de la SRAM 
+    CLRF LATD; Limpiamos el registro LATD
+    MOVLW .14 ; Movemos el dato literal 14 hacÃ­a el registro W
+    MOVWF 0X10; Movemos el dato de W hacÃ­a la direcciÃ³n 0X10 de la SRAM 
     MOVLW .255; Movemos el dato literal 254 hacia el registro W
-    ADDWF 0X10, F, 0; Sumamos el dato de W con el dato de la dirección 0X10 de la SRAM
+    ADDWF 0X10, F, 0; Sumamos el dato de W con el dato de la direcciÃ³n 0X10 de la SRAM
     ;ACOTACIONES: 
-    ;Hasta este punto tendríamos esto:
+    ;Hasta este punto tendrÃ­amos esto:
     ; W = 14 -> pos 0X10 = W -> POS 0X10 = 14 
     ; Luego W = 25
     ; Para finalizar, sumamos los datos, es decir; pos 0X10 + W = 14 + 255 = 269 = 1 0000 1101
-    ; Pero es necesario recordar que el dato a guardar no serán los 268, sinó solo los 8 bits LSB
+    ; Pero es necesario recordar que el dato a guardar no serÃ¡n los 268, sinÃ³ solo los 8 bits LSB
     ; Es decir: pos0x10 = 0000 1101 = 13
     ; Pero... Porque?
-    ; Se debe recordad que todos los datos a trabajar deben ser de 8 bits como máximo, y
-    ; el resultado de la suma anterior es de 9 bits, por lo que se cogerán solo los 
+    ; Se debe recordad que todos los datos a trabajar deben ser de 8 bits como mÃ¡ximo, y
+    ; el resultado de la suma anterior es de 9 bits, por lo que se cogerÃ¡n solo los 
     ; primeros 8 bits para ser guardados la pos 0x10 designada de la SRAM y el bit MSB
-    ; quedará representado con el bit Carry del registro STATUS que se pondrá en 1 al tener un 
+    ; quedarÃ¡ representado con el bit Carry del registro STATUS que se pondrÃ¡ en 1 al tener un 
     ; bit de acarreo resultado de una suma.
     ; El registro STATUS tiene los siguientes BITS:
-    ; Z -> que se activa cuando el resultado de una operación el la ALU da 0 
-    ; OV -> Se activa cuando ocurre un desborde en la operación aritmetica
+    ; Z -> que se activa cuando el resultado de una operaciÃ³n el la ALU da 0 
+    ; OV -> Se activa cuando ocurre un desborde en la operaciÃ³n aritmetica
     ; N -> Se activa cuando el resultado es negativo
     ; DC -> Se activa cuando tenemos un carry en los primeros 4 bits del resultado de la ALU
     ; C -> Se activa cuando hay una salida de Carry del MSB del resultado de la ALU
     MOVLW .20 ; Movemos el dato literal hacia el registro W
-    ADDWFC 0X10, w; Sumamos el dato de W con el dato de la pos 0x10 de la SRAM más el bit carry y se guarda en W
-    ; Acá tendriamos lo siguiente, W = 20, pos 0x10 = 13 y carry = 1 => 34 
+    ADDWFC 0X10, w; Sumamos el dato de W con el dato de la pos 0x10 de la SRAM mÃ¡s el bit carry y se guarda en W
+    ; AcÃ¡ tendriamos lo siguiente, W = 20, pos 0x10 = 13 y carry = 1 => 34 
     ; W = 34 decimal 
     MOVWF LATD; Movemos el dato de W hacia el registro LATD
-    GOTO START; Volvemos la dirección con el alias START 
+    GOTO START; Volvemos la direcciÃ³n con el alias START 
     ORG 0X0D0
 INT_ALTA_PRIOR:
     RETFIE 
