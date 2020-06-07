@@ -25,7 +25,7 @@
   CONFIG  LPT1OSC = OFF         ; Low-Power Timer 1 Oscillator Enable bit (Timer1 configured for higher power operation)
   CONFIG  MCLRE = ON            ; MCLR Pin Enable bit (MCLR pin enabled; RE3 input pin disabled)
 
-;***************** USO DE LA MNEMONICO ANDWFC F, D, A  ****************************
+;***************** USO DE LA MNEMONICO ANDWF F, D, A  ****************************
 ;El empleo de este mnemonico es bastante simple pues realiza la operacion de AND entre el registro W y un FILE F 
 ;Que puede ser un operando, dato o registro de trabajo
 ;********** EJEMPLO ****************
@@ -45,12 +45,12 @@ MAIN:
 START:
     CLRF LATD; Limpiamos el registro W
     MOVLW B'01010101';Movemos el dato literal binario hacia el registro de trabajo W
-    MOVWF 0X10;Llevamos el dato hacía la posición 0x10 de la SRAM
+    MOVWF 0X10;Llevamos el dato hacÃ­a la posiciÃ³n 0x10 de la SRAM
     MOVLW B'10101010'; Movemos el dato literal binario hacia el registro W
     ANDWF 0X10, W;Hacemos un and entre W y el dato de la pos 0x10 de la SRAM
     MOVWF LATD ; LATD = W AND pos 0x10
     ;En este caos en particular el resultado va a ser 0x00
-    ;Explicación: 01010101 AND 10101010 = 00000000
+    ;ExplicaciÃ³n: 01010101 AND 10101010 = 00000000
     GOTO START; Retornamos a la direccion de memoria con el nombre START
 INT_ALTA_PRIOR:
     RETFIE 
