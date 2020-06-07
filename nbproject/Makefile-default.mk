@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=principal.asm Directiva_ADDWF.asm Directiva_ADDLW.asm mnemonico_ADDWFC.asm ADDWFC_Example.asm ADDWF_ADDLW_ADDWFC_Example.asm Mnemonico_ANDWF.asm
+SOURCEFILES_QUOTED_IF_SPACED=principal.asm Directiva_ADDWF.asm Directiva_ADDLW.asm mnemonico_ADDWFC.asm ADDWFC_Example.asm ADDWF_ADDLW_ADDWFC_Example.asm Mnemonico_ANDWF.asm Mnemonico_ANDLW.asm
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/principal.o ${OBJECTDIR}/Directiva_ADDWF.o ${OBJECTDIR}/Directiva_ADDLW.o ${OBJECTDIR}/mnemonico_ADDWFC.o ${OBJECTDIR}/ADDWFC_Example.o ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o ${OBJECTDIR}/Mnemonico_ANDWF.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/principal.o.d ${OBJECTDIR}/Directiva_ADDWF.o.d ${OBJECTDIR}/Directiva_ADDLW.o.d ${OBJECTDIR}/mnemonico_ADDWFC.o.d ${OBJECTDIR}/ADDWFC_Example.o.d ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o.d ${OBJECTDIR}/Mnemonico_ANDWF.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/principal.o ${OBJECTDIR}/Directiva_ADDWF.o ${OBJECTDIR}/Directiva_ADDLW.o ${OBJECTDIR}/mnemonico_ADDWFC.o ${OBJECTDIR}/ADDWFC_Example.o ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o ${OBJECTDIR}/Mnemonico_ANDWF.o ${OBJECTDIR}/Mnemonico_ANDLW.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/principal.o.d ${OBJECTDIR}/Directiva_ADDWF.o.d ${OBJECTDIR}/Directiva_ADDLW.o.d ${OBJECTDIR}/mnemonico_ADDWFC.o.d ${OBJECTDIR}/ADDWFC_Example.o.d ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o.d ${OBJECTDIR}/Mnemonico_ANDWF.o.d ${OBJECTDIR}/Mnemonico_ANDLW.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/principal.o ${OBJECTDIR}/Directiva_ADDWF.o ${OBJECTDIR}/Directiva_ADDLW.o ${OBJECTDIR}/mnemonico_ADDWFC.o ${OBJECTDIR}/ADDWFC_Example.o ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o ${OBJECTDIR}/Mnemonico_ANDWF.o
+OBJECTFILES=${OBJECTDIR}/principal.o ${OBJECTDIR}/Directiva_ADDWF.o ${OBJECTDIR}/Directiva_ADDLW.o ${OBJECTDIR}/mnemonico_ADDWFC.o ${OBJECTDIR}/ADDWFC_Example.o ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o ${OBJECTDIR}/Mnemonico_ANDWF.o ${OBJECTDIR}/Mnemonico_ANDLW.o
 
 # Source Files
-SOURCEFILES=principal.asm Directiva_ADDWF.asm Directiva_ADDLW.asm mnemonico_ADDWFC.asm ADDWFC_Example.asm ADDWF_ADDLW_ADDWFC_Example.asm Mnemonico_ANDWF.asm
+SOURCEFILES=principal.asm Directiva_ADDWF.asm Directiva_ADDLW.asm mnemonico_ADDWFC.asm ADDWFC_Example.asm ADDWF_ADDLW_ADDWFC_Example.asm Mnemonico_ANDWF.asm Mnemonico_ANDLW.asm
 
 
 
@@ -151,6 +151,14 @@ ${OBJECTDIR}/Mnemonico_ANDWF.o: Mnemonico_ANDWF.asm  nbproject/Makefile-${CND_CO
 	@${DEP_GEN} -d "${OBJECTDIR}/Mnemonico_ANDWF.o"
 	@${FIXDEPS} "${OBJECTDIR}/Mnemonico_ANDWF.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
+${OBJECTDIR}/Mnemonico_ANDLW.o: Mnemonico_ANDLW.asm  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Mnemonico_ANDLW.o.d 
+	@${RM} ${OBJECTDIR}/Mnemonico_ANDLW.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Mnemonico_ANDLW.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Mnemonico_ANDLW.lst\" -e\"${OBJECTDIR}/Mnemonico_ANDLW.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/Mnemonico_ANDLW.o\" \"Mnemonico_ANDLW.asm\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/Mnemonico_ANDLW.o"
+	@${FIXDEPS} "${OBJECTDIR}/Mnemonico_ANDLW.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	
 else
 ${OBJECTDIR}/principal.o: principal.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -207,6 +215,14 @@ ${OBJECTDIR}/Mnemonico_ANDWF.o: Mnemonico_ANDWF.asm  nbproject/Makefile-${CND_CO
 	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Mnemonico_ANDWF.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Mnemonico_ANDWF.lst\" -e\"${OBJECTDIR}/Mnemonico_ANDWF.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/Mnemonico_ANDWF.o\" \"Mnemonico_ANDWF.asm\" 
 	@${DEP_GEN} -d "${OBJECTDIR}/Mnemonico_ANDWF.o"
 	@${FIXDEPS} "${OBJECTDIR}/Mnemonico_ANDWF.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	
+${OBJECTDIR}/Mnemonico_ANDLW.o: Mnemonico_ANDLW.asm  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Mnemonico_ANDLW.o.d 
+	@${RM} ${OBJECTDIR}/Mnemonico_ANDLW.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Mnemonico_ANDLW.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Mnemonico_ANDLW.lst\" -e\"${OBJECTDIR}/Mnemonico_ANDLW.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/Mnemonico_ANDLW.o\" \"Mnemonico_ANDLW.asm\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/Mnemonico_ANDLW.o"
+	@${FIXDEPS} "${OBJECTDIR}/Mnemonico_ANDLW.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 endif
 
