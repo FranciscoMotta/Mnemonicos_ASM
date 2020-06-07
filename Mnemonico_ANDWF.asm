@@ -25,7 +25,9 @@
   CONFIG  LPT1OSC = OFF         ; Low-Power Timer 1 Oscillator Enable bit (Timer1 configured for higher power operation)
   CONFIG  MCLRE = ON            ; MCLR Pin Enable bit (MCLR pin enabled; RE3 input pin disabled)
 
-;***************** USO DE LA MNEMONICO ADDWFC F, D, A  ****************************
+;***************** USO DE LA MNEMONICO ANDWFC F, D, A  ****************************
+;El empleo de este mnemonico es bastante simple pues realiza la operacion de AND entre el registro W y un FILE F 
+;Que puede ser un operando, dato o registro de trabajo
 ;********** EJEMPLO ****************
     CBLOCK 0x00
     ENDC 
@@ -42,16 +44,14 @@ MAIN:
     GOTO START ; Vamos a la direccion con el alias de START 
 START:
     CLRF LATD; Limpiamos el registro W
-    MOVLW .240 ; W = 240
-    MOVWF 0X20; pos 0X20 = 240
-    MOVLW .20; W = 20
-    ADDLW .40 ; W = W + 40 => W = 20 + 40 = 60
-    ADDWF 0X20, F; pos 0X20 = pos 0X20 + W = 240 + 60 = 300 = 1 0010 1100 => pos 0X20 = 0010 1100 = 44 ; Carry Status = 1  
-    MOVLW .14; W = 14 
-    ADDWFC 0X20, W ; W = W + pos 0x20 + C => W = 14 + 44 + 1 = 59 => 3B = 00111011
-    MOVWF LATD ; LATD = 59 y se muestra por ese puerto que puede variar 
+    MOVLW B'01010101';Movemos el dato literal binario hacia el registro de trabajo W
+    MOVWF 0X10;Llevamos el dato hacía la posición 0x10 de la SRAM
+    MOVLW B'10101010'; Movemos el dato literal binario hacia el registro W
+    ANDWF 0X10, W;Hacemos un and entre W y el dato de la pos 0x10 de la SRAM
+    MOVWF LATD ; LATD = W AND pos 0x10
+    ;En este caos en particular el resultado va a ser 0x00
+    ;Explicación: 01010101 AND 10101010 = 00000000
     GOTO START; Retornamos a la direccion de memoria con el nombre START
-    ORG 0X0D0
 INT_ALTA_PRIOR:
     RETFIE 
     ORG 0X0F0
