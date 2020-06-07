@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=principal.asm Directiva_ADDWF.asm Directiva_ADDLW.asm
+SOURCEFILES_QUOTED_IF_SPACED=principal.asm Directiva_ADDWF.asm Directiva_ADDLW.asm mnemonico_ADDWFC.asm
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/principal.o ${OBJECTDIR}/Directiva_ADDWF.o ${OBJECTDIR}/Directiva_ADDLW.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/principal.o.d ${OBJECTDIR}/Directiva_ADDWF.o.d ${OBJECTDIR}/Directiva_ADDLW.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/principal.o ${OBJECTDIR}/Directiva_ADDWF.o ${OBJECTDIR}/Directiva_ADDLW.o ${OBJECTDIR}/mnemonico_ADDWFC.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/principal.o.d ${OBJECTDIR}/Directiva_ADDWF.o.d ${OBJECTDIR}/Directiva_ADDLW.o.d ${OBJECTDIR}/mnemonico_ADDWFC.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/principal.o ${OBJECTDIR}/Directiva_ADDWF.o ${OBJECTDIR}/Directiva_ADDLW.o
+OBJECTFILES=${OBJECTDIR}/principal.o ${OBJECTDIR}/Directiva_ADDWF.o ${OBJECTDIR}/Directiva_ADDLW.o ${OBJECTDIR}/mnemonico_ADDWFC.o
 
 # Source Files
-SOURCEFILES=principal.asm Directiva_ADDWF.asm Directiva_ADDLW.asm
+SOURCEFILES=principal.asm Directiva_ADDWF.asm Directiva_ADDLW.asm mnemonico_ADDWFC.asm
 
 
 
@@ -119,6 +119,14 @@ ${OBJECTDIR}/Directiva_ADDLW.o: Directiva_ADDLW.asm  nbproject/Makefile-${CND_CO
 	@${DEP_GEN} -d "${OBJECTDIR}/Directiva_ADDLW.o"
 	@${FIXDEPS} "${OBJECTDIR}/Directiva_ADDLW.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
+${OBJECTDIR}/mnemonico_ADDWFC.o: mnemonico_ADDWFC.asm  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mnemonico_ADDWFC.o.d 
+	@${RM} ${OBJECTDIR}/mnemonico_ADDWFC.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/mnemonico_ADDWFC.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/mnemonico_ADDWFC.lst\" -e\"${OBJECTDIR}/mnemonico_ADDWFC.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/mnemonico_ADDWFC.o\" \"mnemonico_ADDWFC.asm\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/mnemonico_ADDWFC.o"
+	@${FIXDEPS} "${OBJECTDIR}/mnemonico_ADDWFC.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	
 else
 ${OBJECTDIR}/principal.o: principal.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -143,6 +151,14 @@ ${OBJECTDIR}/Directiva_ADDLW.o: Directiva_ADDLW.asm  nbproject/Makefile-${CND_CO
 	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Directiva_ADDLW.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Directiva_ADDLW.lst\" -e\"${OBJECTDIR}/Directiva_ADDLW.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/Directiva_ADDLW.o\" \"Directiva_ADDLW.asm\" 
 	@${DEP_GEN} -d "${OBJECTDIR}/Directiva_ADDLW.o"
 	@${FIXDEPS} "${OBJECTDIR}/Directiva_ADDLW.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	
+${OBJECTDIR}/mnemonico_ADDWFC.o: mnemonico_ADDWFC.asm  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mnemonico_ADDWFC.o.d 
+	@${RM} ${OBJECTDIR}/mnemonico_ADDWFC.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/mnemonico_ADDWFC.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/mnemonico_ADDWFC.lst\" -e\"${OBJECTDIR}/mnemonico_ADDWFC.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/mnemonico_ADDWFC.o\" \"mnemonico_ADDWFC.asm\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/mnemonico_ADDWFC.o"
+	@${FIXDEPS} "${OBJECTDIR}/mnemonico_ADDWFC.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 endif
 
