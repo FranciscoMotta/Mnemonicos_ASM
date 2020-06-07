@@ -51,6 +51,7 @@ START:
     ADDWFC 0X20, W ; W = W + pos 0x20 + C => W = 14 + 44 + 1 = 59 => 3B = 00111011
     MOVWF LATD ; LATD = 59
     GOTO START;
+    ORG 0X0D0
 INT_ALTA_PRIOR:
     RETFIE 
     ORG 0X0F0
