@@ -31,7 +31,7 @@
 ;cumpla o no la condición que propone, pero... ¿Cúal es esa coincidencia?
 ;Para enterder el mnemonico CPFSEQ es necesario saber que significa. Como sabemos, todo el lenguaje ASSEMBLER 
 ;proviene del ingles y el mnemonico que estamos empleando "CPFSEQ" es la abreviación de 
-;ComPare File Skip if it's EQual to, si sacamos solo las mayusculas, tenemos CPFSEQ.
+;ComPare File Skip if it's Equal to, si sacamos solo las mayusculas, tenemos CPFSEQ.
 ;Para poder aplicar el presente mnemonico es necesario tener un dato en el registro W y otro en una posición de la SRAM que queramos
 ;O un valor guardado en una variable como la que tenemos en el CBLOCK, la cual es un banco de memoria destinado para "variables"
 ;********** EJEMPLO ****************
