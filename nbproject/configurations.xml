@@ -28,6 +28,7 @@
       <itemPath>Mnemonico_CPFSLT.asm</itemPath>
       <itemPath>Mnemonico_ADDWFC.asm</itemPath>
       <itemPath>Mnemonico_DECF.asm</itemPath>
+      <itemPath>Mnemonico_INCF.asm</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
