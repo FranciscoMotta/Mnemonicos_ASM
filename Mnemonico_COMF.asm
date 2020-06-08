@@ -30,6 +30,9 @@
 ;es generar el valor complementario del valor del registro F
 ;Por complemento se puede entender que niega todo el valor del registro F
 ; Es decir: Si F = 00000001 -> comf F = 11111110
+;si COMF F, D, tiene W en el valor de D el dato se guardará en el registro W
+;de otro modo, si D = F, es decir COMF variable, F, el dato complemento
+; se guardará en la misma variable 
 ;********** EJEMPLO ****************
     CBLOCK 0x00
 	variablePrueba
