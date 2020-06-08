@@ -24,6 +24,7 @@
       <itemPath>Mnemonico_COMF.asm</itemPath>
       <itemPath>ADDFW_COMF_Example.asm</itemPath>
       <itemPath>CPFSEQ_BSF_BCF_MOVF_SETF_PIC18_Example.asm</itemPath>
+      <itemPath>IGUALDAD_PUERTOS_MOVF_PIC18.asm</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
