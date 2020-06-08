@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=principal.asm mnemonico_ADDWFC.asm ADDWFC_Example.asm ADDWF_ADDLW_ADDWFC_Example.asm Mnemonico_ANDWF.asm Mnemonico_ANDLW.asm ADDWF_ADDWFC_ANDWF_ejemplo.asm Mnemonico_CLRF.asm Mnemonico_COMF.asm ADDFW_COMF_Example.asm
+SOURCEFILES_QUOTED_IF_SPACED=principal.asm mnemonico_ADDWFC.asm ADDWFC_Example.asm ADDWF_ADDLW_ADDWFC_Example.asm Mnemonico_ANDWF.asm Mnemonico_ANDLW.asm ADDWF_ADDWFC_ANDWF_ejemplo.asm Mnemonico_CLRF.asm Mnemonico_COMF.asm ADDFW_COMF_Example.asm Mnemonico_CPFSEQ.asm
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/principal.o ${OBJECTDIR}/mnemonico_ADDWFC.o ${OBJECTDIR}/ADDWFC_Example.o ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o ${OBJECTDIR}/Mnemonico_ANDWF.o ${OBJECTDIR}/Mnemonico_ANDLW.o ${OBJECTDIR}/ADDWF_ADDWFC_ANDWF_ejemplo.o ${OBJECTDIR}/Mnemonico_CLRF.o ${OBJECTDIR}/Mnemonico_COMF.o ${OBJECTDIR}/ADDFW_COMF_Example.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/principal.o.d ${OBJECTDIR}/mnemonico_ADDWFC.o.d ${OBJECTDIR}/ADDWFC_Example.o.d ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o.d ${OBJECTDIR}/Mnemonico_ANDWF.o.d ${OBJECTDIR}/Mnemonico_ANDLW.o.d ${OBJECTDIR}/ADDWF_ADDWFC_ANDWF_ejemplo.o.d ${OBJECTDIR}/Mnemonico_CLRF.o.d ${OBJECTDIR}/Mnemonico_COMF.o.d ${OBJECTDIR}/ADDFW_COMF_Example.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/principal.o ${OBJECTDIR}/mnemonico_ADDWFC.o ${OBJECTDIR}/ADDWFC_Example.o ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o ${OBJECTDIR}/Mnemonico_ANDWF.o ${OBJECTDIR}/Mnemonico_ANDLW.o ${OBJECTDIR}/ADDWF_ADDWFC_ANDWF_ejemplo.o ${OBJECTDIR}/Mnemonico_CLRF.o ${OBJECTDIR}/Mnemonico_COMF.o ${OBJECTDIR}/ADDFW_COMF_Example.o ${OBJECTDIR}/Mnemonico_CPFSEQ.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/principal.o.d ${OBJECTDIR}/mnemonico_ADDWFC.o.d ${OBJECTDIR}/ADDWFC_Example.o.d ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o.d ${OBJECTDIR}/Mnemonico_ANDWF.o.d ${OBJECTDIR}/Mnemonico_ANDLW.o.d ${OBJECTDIR}/ADDWF_ADDWFC_ANDWF_ejemplo.o.d ${OBJECTDIR}/Mnemonico_CLRF.o.d ${OBJECTDIR}/Mnemonico_COMF.o.d ${OBJECTDIR}/ADDFW_COMF_Example.o.d ${OBJECTDIR}/Mnemonico_CPFSEQ.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/principal.o ${OBJECTDIR}/mnemonico_ADDWFC.o ${OBJECTDIR}/ADDWFC_Example.o ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o ${OBJECTDIR}/Mnemonico_ANDWF.o ${OBJECTDIR}/Mnemonico_ANDLW.o ${OBJECTDIR}/ADDWF_ADDWFC_ANDWF_ejemplo.o ${OBJECTDIR}/Mnemonico_CLRF.o ${OBJECTDIR}/Mnemonico_COMF.o ${OBJECTDIR}/ADDFW_COMF_Example.o
+OBJECTFILES=${OBJECTDIR}/principal.o ${OBJECTDIR}/mnemonico_ADDWFC.o ${OBJECTDIR}/ADDWFC_Example.o ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o ${OBJECTDIR}/Mnemonico_ANDWF.o ${OBJECTDIR}/Mnemonico_ANDLW.o ${OBJECTDIR}/ADDWF_ADDWFC_ANDWF_ejemplo.o ${OBJECTDIR}/Mnemonico_CLRF.o ${OBJECTDIR}/Mnemonico_COMF.o ${OBJECTDIR}/ADDFW_COMF_Example.o ${OBJECTDIR}/Mnemonico_CPFSEQ.o
 
 # Source Files
-SOURCEFILES=principal.asm mnemonico_ADDWFC.asm ADDWFC_Example.asm ADDWF_ADDLW_ADDWFC_Example.asm Mnemonico_ANDWF.asm Mnemonico_ANDLW.asm ADDWF_ADDWFC_ANDWF_ejemplo.asm Mnemonico_CLRF.asm Mnemonico_COMF.asm ADDFW_COMF_Example.asm
+SOURCEFILES=principal.asm mnemonico_ADDWFC.asm ADDWFC_Example.asm ADDWF_ADDLW_ADDWFC_Example.asm Mnemonico_ANDWF.asm Mnemonico_ANDLW.asm ADDWF_ADDWFC_ANDWF_ejemplo.asm Mnemonico_CLRF.asm Mnemonico_COMF.asm ADDFW_COMF_Example.asm Mnemonico_CPFSEQ.asm
 
 
 
@@ -175,6 +175,14 @@ ${OBJECTDIR}/ADDFW_COMF_Example.o: ADDFW_COMF_Example.asm  nbproject/Makefile-${
 	@${DEP_GEN} -d "${OBJECTDIR}/ADDFW_COMF_Example.o"
 	@${FIXDEPS} "${OBJECTDIR}/ADDFW_COMF_Example.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
+${OBJECTDIR}/Mnemonico_CPFSEQ.o: Mnemonico_CPFSEQ.asm  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Mnemonico_CPFSEQ.o.d 
+	@${RM} ${OBJECTDIR}/Mnemonico_CPFSEQ.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Mnemonico_CPFSEQ.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Mnemonico_CPFSEQ.lst\" -e\"${OBJECTDIR}/Mnemonico_CPFSEQ.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/Mnemonico_CPFSEQ.o\" \"Mnemonico_CPFSEQ.asm\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/Mnemonico_CPFSEQ.o"
+	@${FIXDEPS} "${OBJECTDIR}/Mnemonico_CPFSEQ.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	
 else
 ${OBJECTDIR}/principal.o: principal.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -256,18 +264,26 @@ ${OBJECTDIR}/ADDFW_COMF_Example.o: ADDFW_COMF_Example.asm  nbproject/Makefile-${
 	@${DEP_GEN} -d "${OBJECTDIR}/ADDFW_COMF_Example.o"
 	@${FIXDEPS} "${OBJECTDIR}/ADDFW_COMF_Example.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
+${OBJECTDIR}/Mnemonico_CPFSEQ.o: Mnemonico_CPFSEQ.asm  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Mnemonico_CPFSEQ.o.d 
+	@${RM} ${OBJECTDIR}/Mnemonico_CPFSEQ.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Mnemonico_CPFSEQ.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Mnemonico_CPFSEQ.lst\" -e\"${OBJECTDIR}/Mnemonico_CPFSEQ.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/Mnemonico_CPFSEQ.o\" \"Mnemonico_CPFSEQ.asm\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/Mnemonico_CPFSEQ.o"
+	@${FIXDEPS} "${OBJECTDIR}/Mnemonico_CPFSEQ.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	
 endif
 
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: link
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-dist/${CND_CONF}/${IMAGE_TYPE}/primerCodeAsm.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
+dist/${CND_CONF}/${IMAGE_TYPE}/primerCodeAsm.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    Mnemonico_CPFSEQ.asm
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION)  -w -x -u_DEBUG -z__ICD2RAM=1 -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"   -z__MPLAB_BUILD=1  -z__MPLAB_DEBUG=1 -z__MPLAB_DEBUGGER_SIMULATOR=1 $(MP_LINKER_DEBUG_OPTION) -odist/${CND_CONF}/${IMAGE_TYPE}/primerCodeAsm.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
+	${MP_LD} $(MP_EXTRA_LD_PRE) "Mnemonico_CPFSEQ.asm"  -p$(MP_PROCESSOR_OPTION)  -w -x -u_DEBUG -z__ICD2RAM=1 -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"   -z__MPLAB_BUILD=1  -z__MPLAB_DEBUG=1 -z__MPLAB_DEBUGGER_SIMULATOR=1 $(MP_LINKER_DEBUG_OPTION) -odist/${CND_CONF}/${IMAGE_TYPE}/primerCodeAsm.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
 else
-dist/${CND_CONF}/${IMAGE_TYPE}/primerCodeAsm.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
+dist/${CND_CONF}/${IMAGE_TYPE}/primerCodeAsm.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   Mnemonico_CPFSEQ.asm
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_LD} $(MP_EXTRA_LD_PRE)   -p$(MP_PROCESSOR_OPTION)  -w  -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"   -z__MPLAB_BUILD=1  -odist/${CND_CONF}/${IMAGE_TYPE}/primerCodeAsm.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
+	${MP_LD} $(MP_EXTRA_LD_PRE) "Mnemonico_CPFSEQ.asm"  -p$(MP_PROCESSOR_OPTION)  -w  -m"${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"   -z__MPLAB_BUILD=1  -odist/${CND_CONF}/${IMAGE_TYPE}/primerCodeAsm.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
 endif
 
 
