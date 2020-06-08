@@ -25,11 +25,7 @@
   CONFIG  LPT1OSC = OFF         ; Low-Power Timer 1 Oscillator Enable bit (Timer1 configured for higher power operation)
   CONFIG  MCLRE = ON            ; MCLR Pin Enable bit (MCLR pin enabled; RE3 input pin disabled)
 
-;***************** USO DE LA MNEMONICO COMF F, D, A  ****************************
-;El empleo de este mnemonico es simple de entender debido a que su función
-;es generar el valor complementario del valor del registro F
-;Por complemento se puede entender que niega todo el valor del registro F
-; Es decir: Si F = 00000001 -> comf F = 11111110
+;***************** Ejemplo del empleo de ADDWF con el mnemonico COMF  ****************************
 ;********** EJEMPLO ****************
     CBLOCK 0x00
 	variablePrueba
@@ -63,5 +59,3 @@ INT_ALTA_PRIOR:
 INT_BAJA_PRIOR:
     RETFIE 
     END 
-
-
