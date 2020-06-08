@@ -29,6 +29,7 @@
       <itemPath>Mnemonico_ADDWFC.asm</itemPath>
       <itemPath>Mnemonico_DECF.asm</itemPath>
       <itemPath>Mnemonico_INCF.asm</itemPath>
+      <itemPath>INCF_DECF_ADDWF_CPFSEQ_Example.asm</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

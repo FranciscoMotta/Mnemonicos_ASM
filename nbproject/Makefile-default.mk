@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=principal.asm ADDWFC_Example.asm ADDWF_ADDLW_ADDWFC_Example.asm Mnemonico_ANDWF.asm Mnemonico_ANDLW.asm ADDWF_ADDWFC_ANDWF_ejemplo.asm Mnemonico_CLRF.asm Mnemonico_COMF.asm ADDFW_COMF_Example.asm Mnemonico_CPFSEQ.asm CPFSEQ_BSF_BCF_MOVF_SETF_PIC18_Example.asm IGUALDAD_PUERTOS_MOVF_PIC18.asm Mnemonico_CPFSGT.asm Mnemonico_CPFSLT.asm Mnemonico_ADDWFC.asm Mnemonico_DECF.asm Mnemonico_INCF.asm
+SOURCEFILES_QUOTED_IF_SPACED=principal.asm ADDWFC_Example.asm ADDWF_ADDLW_ADDWFC_Example.asm Mnemonico_ANDWF.asm Mnemonico_ANDLW.asm ADDWF_ADDWFC_ANDWF_ejemplo.asm Mnemonico_CLRF.asm Mnemonico_COMF.asm ADDFW_COMF_Example.asm Mnemonico_CPFSEQ.asm CPFSEQ_BSF_BCF_MOVF_SETF_PIC18_Example.asm IGUALDAD_PUERTOS_MOVF_PIC18.asm Mnemonico_CPFSGT.asm Mnemonico_CPFSLT.asm Mnemonico_ADDWFC.asm Mnemonico_DECF.asm Mnemonico_INCF.asm INCF_DECF_ADDWF_CPFSEQ_Example.asm
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/principal.o ${OBJECTDIR}/ADDWFC_Example.o ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o ${OBJECTDIR}/Mnemonico_ANDWF.o ${OBJECTDIR}/Mnemonico_ANDLW.o ${OBJECTDIR}/ADDWF_ADDWFC_ANDWF_ejemplo.o ${OBJECTDIR}/Mnemonico_CLRF.o ${OBJECTDIR}/Mnemonico_COMF.o ${OBJECTDIR}/ADDFW_COMF_Example.o ${OBJECTDIR}/Mnemonico_CPFSEQ.o ${OBJECTDIR}/CPFSEQ_BSF_BCF_MOVF_SETF_PIC18_Example.o ${OBJECTDIR}/IGUALDAD_PUERTOS_MOVF_PIC18.o ${OBJECTDIR}/Mnemonico_CPFSGT.o ${OBJECTDIR}/Mnemonico_CPFSLT.o ${OBJECTDIR}/Mnemonico_ADDWFC.o ${OBJECTDIR}/Mnemonico_DECF.o ${OBJECTDIR}/Mnemonico_INCF.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/principal.o.d ${OBJECTDIR}/ADDWFC_Example.o.d ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o.d ${OBJECTDIR}/Mnemonico_ANDWF.o.d ${OBJECTDIR}/Mnemonico_ANDLW.o.d ${OBJECTDIR}/ADDWF_ADDWFC_ANDWF_ejemplo.o.d ${OBJECTDIR}/Mnemonico_CLRF.o.d ${OBJECTDIR}/Mnemonico_COMF.o.d ${OBJECTDIR}/ADDFW_COMF_Example.o.d ${OBJECTDIR}/Mnemonico_CPFSEQ.o.d ${OBJECTDIR}/CPFSEQ_BSF_BCF_MOVF_SETF_PIC18_Example.o.d ${OBJECTDIR}/IGUALDAD_PUERTOS_MOVF_PIC18.o.d ${OBJECTDIR}/Mnemonico_CPFSGT.o.d ${OBJECTDIR}/Mnemonico_CPFSLT.o.d ${OBJECTDIR}/Mnemonico_ADDWFC.o.d ${OBJECTDIR}/Mnemonico_DECF.o.d ${OBJECTDIR}/Mnemonico_INCF.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/principal.o ${OBJECTDIR}/ADDWFC_Example.o ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o ${OBJECTDIR}/Mnemonico_ANDWF.o ${OBJECTDIR}/Mnemonico_ANDLW.o ${OBJECTDIR}/ADDWF_ADDWFC_ANDWF_ejemplo.o ${OBJECTDIR}/Mnemonico_CLRF.o ${OBJECTDIR}/Mnemonico_COMF.o ${OBJECTDIR}/ADDFW_COMF_Example.o ${OBJECTDIR}/Mnemonico_CPFSEQ.o ${OBJECTDIR}/CPFSEQ_BSF_BCF_MOVF_SETF_PIC18_Example.o ${OBJECTDIR}/IGUALDAD_PUERTOS_MOVF_PIC18.o ${OBJECTDIR}/Mnemonico_CPFSGT.o ${OBJECTDIR}/Mnemonico_CPFSLT.o ${OBJECTDIR}/Mnemonico_ADDWFC.o ${OBJECTDIR}/Mnemonico_DECF.o ${OBJECTDIR}/Mnemonico_INCF.o ${OBJECTDIR}/INCF_DECF_ADDWF_CPFSEQ_Example.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/principal.o.d ${OBJECTDIR}/ADDWFC_Example.o.d ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o.d ${OBJECTDIR}/Mnemonico_ANDWF.o.d ${OBJECTDIR}/Mnemonico_ANDLW.o.d ${OBJECTDIR}/ADDWF_ADDWFC_ANDWF_ejemplo.o.d ${OBJECTDIR}/Mnemonico_CLRF.o.d ${OBJECTDIR}/Mnemonico_COMF.o.d ${OBJECTDIR}/ADDFW_COMF_Example.o.d ${OBJECTDIR}/Mnemonico_CPFSEQ.o.d ${OBJECTDIR}/CPFSEQ_BSF_BCF_MOVF_SETF_PIC18_Example.o.d ${OBJECTDIR}/IGUALDAD_PUERTOS_MOVF_PIC18.o.d ${OBJECTDIR}/Mnemonico_CPFSGT.o.d ${OBJECTDIR}/Mnemonico_CPFSLT.o.d ${OBJECTDIR}/Mnemonico_ADDWFC.o.d ${OBJECTDIR}/Mnemonico_DECF.o.d ${OBJECTDIR}/Mnemonico_INCF.o.d ${OBJECTDIR}/INCF_DECF_ADDWF_CPFSEQ_Example.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/principal.o ${OBJECTDIR}/ADDWFC_Example.o ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o ${OBJECTDIR}/Mnemonico_ANDWF.o ${OBJECTDIR}/Mnemonico_ANDLW.o ${OBJECTDIR}/ADDWF_ADDWFC_ANDWF_ejemplo.o ${OBJECTDIR}/Mnemonico_CLRF.o ${OBJECTDIR}/Mnemonico_COMF.o ${OBJECTDIR}/ADDFW_COMF_Example.o ${OBJECTDIR}/Mnemonico_CPFSEQ.o ${OBJECTDIR}/CPFSEQ_BSF_BCF_MOVF_SETF_PIC18_Example.o ${OBJECTDIR}/IGUALDAD_PUERTOS_MOVF_PIC18.o ${OBJECTDIR}/Mnemonico_CPFSGT.o ${OBJECTDIR}/Mnemonico_CPFSLT.o ${OBJECTDIR}/Mnemonico_ADDWFC.o ${OBJECTDIR}/Mnemonico_DECF.o ${OBJECTDIR}/Mnemonico_INCF.o
+OBJECTFILES=${OBJECTDIR}/principal.o ${OBJECTDIR}/ADDWFC_Example.o ${OBJECTDIR}/ADDWF_ADDLW_ADDWFC_Example.o ${OBJECTDIR}/Mnemonico_ANDWF.o ${OBJECTDIR}/Mnemonico_ANDLW.o ${OBJECTDIR}/ADDWF_ADDWFC_ANDWF_ejemplo.o ${OBJECTDIR}/Mnemonico_CLRF.o ${OBJECTDIR}/Mnemonico_COMF.o ${OBJECTDIR}/ADDFW_COMF_Example.o ${OBJECTDIR}/Mnemonico_CPFSEQ.o ${OBJECTDIR}/CPFSEQ_BSF_BCF_MOVF_SETF_PIC18_Example.o ${OBJECTDIR}/IGUALDAD_PUERTOS_MOVF_PIC18.o ${OBJECTDIR}/Mnemonico_CPFSGT.o ${OBJECTDIR}/Mnemonico_CPFSLT.o ${OBJECTDIR}/Mnemonico_ADDWFC.o ${OBJECTDIR}/Mnemonico_DECF.o ${OBJECTDIR}/Mnemonico_INCF.o ${OBJECTDIR}/INCF_DECF_ADDWF_CPFSEQ_Example.o
 
 # Source Files
-SOURCEFILES=principal.asm ADDWFC_Example.asm ADDWF_ADDLW_ADDWFC_Example.asm Mnemonico_ANDWF.asm Mnemonico_ANDLW.asm ADDWF_ADDWFC_ANDWF_ejemplo.asm Mnemonico_CLRF.asm Mnemonico_COMF.asm ADDFW_COMF_Example.asm Mnemonico_CPFSEQ.asm CPFSEQ_BSF_BCF_MOVF_SETF_PIC18_Example.asm IGUALDAD_PUERTOS_MOVF_PIC18.asm Mnemonico_CPFSGT.asm Mnemonico_CPFSLT.asm Mnemonico_ADDWFC.asm Mnemonico_DECF.asm Mnemonico_INCF.asm
+SOURCEFILES=principal.asm ADDWFC_Example.asm ADDWF_ADDLW_ADDWFC_Example.asm Mnemonico_ANDWF.asm Mnemonico_ANDLW.asm ADDWF_ADDWFC_ANDWF_ejemplo.asm Mnemonico_CLRF.asm Mnemonico_COMF.asm ADDFW_COMF_Example.asm Mnemonico_CPFSEQ.asm CPFSEQ_BSF_BCF_MOVF_SETF_PIC18_Example.asm IGUALDAD_PUERTOS_MOVF_PIC18.asm Mnemonico_CPFSGT.asm Mnemonico_CPFSLT.asm Mnemonico_ADDWFC.asm Mnemonico_DECF.asm Mnemonico_INCF.asm INCF_DECF_ADDWF_CPFSEQ_Example.asm
 
 
 
@@ -231,6 +231,14 @@ ${OBJECTDIR}/Mnemonico_INCF.o: Mnemonico_INCF.asm  nbproject/Makefile-${CND_CONF
 	@${DEP_GEN} -d "${OBJECTDIR}/Mnemonico_INCF.o"
 	@${FIXDEPS} "${OBJECTDIR}/Mnemonico_INCF.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
+${OBJECTDIR}/INCF_DECF_ADDWF_CPFSEQ_Example.o: INCF_DECF_ADDWF_CPFSEQ_Example.asm  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/INCF_DECF_ADDWF_CPFSEQ_Example.o.d 
+	@${RM} ${OBJECTDIR}/INCF_DECF_ADDWF_CPFSEQ_Example.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/INCF_DECF_ADDWF_CPFSEQ_Example.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/INCF_DECF_ADDWF_CPFSEQ_Example.lst\" -e\"${OBJECTDIR}/INCF_DECF_ADDWF_CPFSEQ_Example.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/INCF_DECF_ADDWF_CPFSEQ_Example.o\" \"INCF_DECF_ADDWF_CPFSEQ_Example.asm\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/INCF_DECF_ADDWF_CPFSEQ_Example.o"
+	@${FIXDEPS} "${OBJECTDIR}/INCF_DECF_ADDWF_CPFSEQ_Example.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	
 else
 ${OBJECTDIR}/principal.o: principal.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -367,6 +375,14 @@ ${OBJECTDIR}/Mnemonico_INCF.o: Mnemonico_INCF.asm  nbproject/Makefile-${CND_CONF
 	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/Mnemonico_INCF.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/Mnemonico_INCF.lst\" -e\"${OBJECTDIR}/Mnemonico_INCF.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/Mnemonico_INCF.o\" \"Mnemonico_INCF.asm\" 
 	@${DEP_GEN} -d "${OBJECTDIR}/Mnemonico_INCF.o"
 	@${FIXDEPS} "${OBJECTDIR}/Mnemonico_INCF.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	
+${OBJECTDIR}/INCF_DECF_ADDWF_CPFSEQ_Example.o: INCF_DECF_ADDWF_CPFSEQ_Example.asm  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/INCF_DECF_ADDWF_CPFSEQ_Example.o.d 
+	@${RM} ${OBJECTDIR}/INCF_DECF_ADDWF_CPFSEQ_Example.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/INCF_DECF_ADDWF_CPFSEQ_Example.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION)  -l\"${OBJECTDIR}/INCF_DECF_ADDWF_CPFSEQ_Example.lst\" -e\"${OBJECTDIR}/INCF_DECF_ADDWF_CPFSEQ_Example.err\" $(ASM_OPTIONS)    -o\"${OBJECTDIR}/INCF_DECF_ADDWF_CPFSEQ_Example.o\" \"INCF_DECF_ADDWF_CPFSEQ_Example.asm\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/INCF_DECF_ADDWF_CPFSEQ_Example.o"
+	@${FIXDEPS} "${OBJECTDIR}/INCF_DECF_ADDWF_CPFSEQ_Example.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 endif
 
