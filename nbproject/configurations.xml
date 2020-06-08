@@ -26,6 +26,7 @@
       <itemPath>CPFSEQ_BSF_BCF_MOVF_SETF_PIC18_Example.asm</itemPath>
       <itemPath>IGUALDAD_PUERTOS_MOVF_PIC18.asm</itemPath>
       <itemPath>Mnemonico_CPFSGT.asm</itemPath>
+      <itemPath>Mnemonico_CPFSLT.asm</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
