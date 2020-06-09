@@ -25,12 +25,11 @@
   CONFIG  LPT1OSC = OFF         ; Low-Power Timer 1 Oscillator Enable bit (Timer1 configured for higher power operation)
   CONFIG  MCLRE = ON            ; MCLR Pin Enable bit (MCLR pin enabled; RE3 input pin disabled)
 
-;***************** EJERCICIO CON DECFSZ F, D Y EL INCF F, D ****************************
-;El presente ejercicio busca aplicar los conceptos aprendidos con anterioridad para el manejo 
-; de los mnemonicos INCF F y el mnemonicos DECFSZ F, D para poder ser aplicado en un ejercicio muy simple y
-; divertido. EL ejercicio consta de la introducción de una variable para ser comprada y decrementada hasta
-; que sea 0, llegado a ese punto si inicialmenta la variable valía 5, se deberá sumar en 1 unidad para empezar
-; de nuevo con todo el proceso de decrementación y comparación
+;***************** MNEMONICO DCFSNZ F, D  ****************************
+;El presente mnemonico es muy similar a su contraparte DECFSZ, pero a diferencia suya
+;este salta a cada que el decremento no sea igual a 0.
+;Esto debido al significado del mismo
+; DCFSNZ => DeCrement File Skip if it's Not Z => Decrementar el registro, saltar si este no es 0.
 ;********** RESOLUCIÓN ****************
     CBLOCK 0x00
 	variablePrueba; Mantenemos nuestra variable para las pruebas 
@@ -42,34 +41,32 @@
     ORG 0X008
     GOTO INT_ALTA_PRIOR 
     ORG 0X018
-    GOTO INT_BAJA_PRIOR 
+    GOTO INT_BAJA_PRIOR
     ORG 0X020
 MAIN:
     CLRF TRISD ; Movemos el dato 0x00 en TRISD haciendo que sea salida
-    CLRF varSuma; Limpiamos el valor inicial de varSuma
-START: ; Posición en la memoria de programa con el alias START
-    MOVLW .3;Movemos un dato literal decimal hace W
-    ADDWF varSuma, F; sumamos el valor de W con el dato de varSuma y se guarda en ella misma
+START:
+    MOVLW .5 ;Movemos un dato literal decimal al registro W
+    MOVWF variablePrueba;Movemos el dato de W hacia variablePrueba
 COMPAR:
-    DECFSZ varSuma, F;Decrementamos el valor inicial de varSuma hasta que sea 0 y lo guardamos en ella
-    GOTO NOT_ZERO;De no ser 0 vamos a la posición de memoria de programa con el alias de NOT_ZERO
-    GOTO ZERO; De ser 0 vamos a la posicion de memoria de programa con el alias de ZERO
-NOT_ZERO: 
-    CLRF LATD ; De no ser 0 mantenemos el puerto D en valor lógico 0x00
-    GOTO COMPAR;Regresamos a la comparación con el decremento
+    DCFSNZ variablePrueba, F;Decrementamos el registro W y saltamos mientras no sea 0
+    GOTO ZERO; Si es 0 vamos a la dirección de memoria con el alias ZERO
+    GOTO NOT_ZERO; De no ser 0 vamos a la dirección de memoria con el alias NOT_ZERO
 ZERO:
-    SETF LATD ; De ser 0 ponemos el puerto en 0XFF a el puerto D
-    INCF varSuma; Sumamos en 1 a varSuma para que la siguiente comparación
-    ;sea con el valor inicial + 1
-    GOTO START; regresamos a la posición de memoria con el ALIAS START para cargar el dato de nuevo y volver a realizar la comparación
-MOSTRAR:; Posición de memoria de programa con el alias MOSTRAR 
-    MOVWF LATD; Movemos a LATD el dato cargado en las posiciones de memoria NO_ES_CERO y ES_CERO
-    GOTO COMPAR; Regresamos a decremetar el registro
+    SETF LATD; Cuando sea 0XFF ponemos al registro LATD
+    GOTO START; Y volvemos a la posicion de memoria con el alias START
+NOT_ZERO:
+    CLRF LATD; De no ser 0 limpiamos el registro LATD
+    GOTO COMPAR; Volvemos a la dirección de memoria con el alias COMPAR 
+    ;para seguir con el "decremento comparativo"
 INT_ALTA_PRIOR:
     RETFIE 
     ORG 0X0F0
 INT_BAJA_PRIOR:
     RETFIE 
     END 
+
+
+
 
 
