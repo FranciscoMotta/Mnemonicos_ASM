@@ -31,6 +31,7 @@
       <itemPath>Mnemonico_INCF.asm</itemPath>
       <itemPath>INCF_DECF_ADDWF_CPFSEQ_Example.asm</itemPath>
       <itemPath>Mnemonico_DECFSZ.asm</itemPath>
+      <itemPath>DECFSZ_INCF_ADDWF_Example.asm</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
