@@ -27,23 +27,23 @@
 
 ;***************** MNEMONICO ICFSZ F, D  ****************************
 ;El presente mnemonico es muy particular, y de buenas a primeras, parece no tener sentido, debido a que
-;incrementa siempre el valor de un determinado registro y saltar· si el valor del registro es 0,
+;incrementa siempre el valor de un determinado registro y saltar√° si el valor del registro es 0,
 ;Pero... como llega a ser 0 un registro que siempre se incrementa?
 ;Para dar con la respuesta, debemos dejar de lado un momento nuestro pensamiento convencional
 ; y referirnos explicitamente a ver que es lo que pasa en un microcontrolador o en cualquier aparado con
 ; datos de n bits.
-; Supongamos pues que tenemos un registro con un tamaÒo, como en el caso del pic18, de 8 bits.
-; este registro podr· tener valores entre 00000000(base 2) hasta 11111111(2), en otras palabras, 
-; tendr· valores entre 0 y 255, pero que pasa si nosotros sumanos el registro 257 veces?
-; o que pasarÌa si cargamos un dato de 11111111 al registro y luego le sumamos 0000001
-; para muchos la respuesta es m·s que obvia, el valor del registro es 00000000, puesto que sufre un desborde del valor m·ximo
+; Supongamos pues que tenemos un registro con un tama√±o, como en el caso del pic18, de 8 bits.
+; este registro podr√° tener valores entre 00000000(base 2) hasta 11111111(2), en otras palabras, 
+; tendr√° valores entre 0 y 255, pero que pasa si nosotros sumanos el registro 257 veces?
+; o que pasar√≠a si cargamos un dato de 11111111 al registro y luego le sumamos 0000001
+; para muchos la respuesta es m√°s que obvia, el valor del registro es 00000000, puesto que sufre un desborde del valor m√°ximo
 ; que este puede tener. Por una parte, podemos analizar si un registro sufre un desborde de diferentes maneras,
-; la m·s sencilla serÌa usar el bit C del registro STATUS que se activa cuando el MSB de un registro sufre un cambio.
-; Pero para fines practicos, el mnemonico INCFSZ, no ayuda con realizar ese an·lisis de desbordamiento y a su vez
-; nos ayuda a realizar otras acciones mientras cumpla o no con la condiciÛn de salto.
+; la m√°s sencilla ser√≠a usar el bit C del registro STATUS que se activa cuando el MSB de un registro sufre un cambio.
+; Pero para fines practicos, el mnemonico INCFSZ, no ayuda con realizar ese an√°lisis de desbordamiento y a su vez
+; nos ayuda a realizar otras acciones mientras cumpla o no con la condici√≥n de salto.
 ; La "D" que aparece a la derecha de la coma en el mnemonico hace referencia al lugar en el cual se va a guardar el resultado
 ; de la suma, esto puede tomar el valor de W, para ser guardado en W, o F para ser guardado en la misma variable
-;********** RESOLUCI”N ****************
+;********** RESOLUCI√ìN ****************
     CBLOCK 0x00
 	variablePrueba; Mantenemos nuestra variable para las pruebas 
 	varSuma ;Creamos una variable de suma
@@ -63,14 +63,15 @@ START:
     MOVWF varSuma; Movemos el dato de W hacia la variable varSuma
 INCRE:
     INCFSZ varSuma, F; Incrementamos varSuma, la guardamos en ella misma y preguntamos su es 0 o no.
-    GOTO NOT_ZERO; De no ser 0, iremos a la posiciÛn de memoria con el alias NOT_ZERO
-    GOTO ZERO; De ser 0, iremos a la posiciÛn de memoria con el alias ZERO
+    GOTO NOT_ZERO; De no ser 0, iremos a la posici√≥n de memoria con el alias NOT_ZERO
+    GOTO ZERO; De ser 0, iremos a la posici√≥n de memoria con el alias ZERO
 NOT_ZERO:
     CLRF LATD; De no ser 0 mantendremos en LATD en 0
-    GOTO INCRE; Y volvemos a la secciÛn de incremento de la variable
+    GOTO INCRE; Y volvemos a la secci√≥n de incremento de la variable
 ZERO:
     SETF LATD; De ser 0, pondremos en 0xff a todo el registro LATD
-    GOTO START; Y volvemos a la secciÛn de START de la memoria de programa 
+    GOTO START; Y volvemos a la secci√≥n de START de la memoria de programa 
+    ORG 0X0C0
 INT_ALTA_PRIOR:
     RETFIE 
     ORG 0X0F0
