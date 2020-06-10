@@ -26,9 +26,9 @@
   CONFIG  MCLRE = ON            ; MCLR Pin Enable bit (MCLR pin enabled; RE3 input pin disabled)
 
 ;***************** MNEMONICO IORLW F, D ******************************
-; El presente mnemonico realizará la operación lógica OR entre un dato
+; El presente mnemonico realizarÃ¡ la operaciÃ³n lÃ³gica OR entre un dato
 ; literal y el registro de trabajo W
-;********** RESOLUCIÓN ****************
+;********** RESOLUCIÃ“N ****************
     CBLOCK 0x00
 	variablePrueba; Mantenemos nuestra variable para las pruebas 
 	varSuma ;Creamos una variable de suma
@@ -47,14 +47,15 @@ MAIN:
     CLRF LATD; Limpiamos el registro LATD
 START:
     MOVLW 0X55; Movemos el dato literal hexadecimal hacia el registro W
-    IORLW 0XAA; Hacemos el OR lógico entre el dato y el dato de W
+    IORLW 0XAA; Hacemos el OR lÃ³gico entre el dato y el dato de W
     ; Luego guardamos el resultado en W
     MOVWF LATD;Movemos el dato de W hacia el registro LATD para ser mostrado
     ; RESUMEN
     ; W = 0X55
     ; W = W(dato anterior) OR OXAA = 0XFF = 1111 1111
     ; LATD = W = 0xFF
-    GOTO START; volvemos a la posición de memoria con el alías START
+    GOTO START; volvemos a la posiciÃ³n de memoria con el alÃ­as START
+    ORG 0X0C0
 INT_ALTA_PRIOR:
     RETFIE 
     ORG 0X0F0
