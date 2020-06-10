@@ -29,7 +29,7 @@
 ; Vamos a poder visualizar el valor del PUERTO D en el PUERTO B
 ; Con el mnemonico MOVF, podemos hacer un manejo de los movimientos de los datos entre los registro correspondientes 
 ; por ejemplo MOVF PORTD , W -> El valor de PORTD se mueve a W  
-;********** RESOLUCIÓN ****************
+;********** RESOLUCIÃ“N ****************
     CBLOCK 0x00
 	variablePrueba
     ENDC 
@@ -49,7 +49,8 @@ MAIN:
 START:
     MOVF PORTD, W; Movemos el dato del PUERTO D al registro W
     MOVWF LATB; El valor de W se mueve hacie el LATB para ser mostrado
-    GOTO START; Vamos a la dirección de memoria de programa con el alias START
+    GOTO START; Vamos a la direcciÃ³n de memoria de programa con el alias START
+    ORG 0x0C0
 INT_ALTA_PRIOR:
     RETFIE 
     ORG 0X0F0
