@@ -41,6 +41,7 @@
       <itemPath>IGUALDAD_PUERTOS_MOVFF_PIC18F.asm</itemPath>
       <itemPath>Mnemonico_MULWF.asm</itemPath>
       <itemPath>Mnemonico_MULLW.asm</itemPath>
+      <itemPath>AA_PLANTILLA_CODE.asm</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
