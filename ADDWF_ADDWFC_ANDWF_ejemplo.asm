@@ -56,6 +56,7 @@ START:
     ; w = 00001000 = 0x08
     MOVWF LATD ; Mostramos el dato por el puerto D
     GOTO START; Retornamos a la direccion de memoria con el nombre START
+    ORG 0X0C0
 INT_ALTA_PRIOR:
     RETFIE 
     ORG 0X0F0

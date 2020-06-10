@@ -26,10 +26,10 @@
   CONFIG  MCLRE = ON            ; MCLR Pin Enable bit (MCLR pin enabled; RE3 input pin disabled)
 
 ;***************** EJERCICIO APLICATIVO CPFSEQ, BCF, BSF, SETF, MOVF con el PIC18F4550  ****************************
-;Usamos el mnemonico CPFSEQ en un aplicación específica con el PIC18F4550 para poder comparar el valor de sus puertos D y B
+;Usamos el mnemonico CPFSEQ en un aplicaciÃ³n especÃ­fica con el PIC18F4550 para poder comparar el valor de sus puertos D y B
 ;SI estos son iguales se debe prender el LED conectado al RC0 del puerto C, de no serlo, el LED se mantiene apagado
 ; EXPLICANDO EL BCF y el BSF
-; Los mnemonicos anteriores puede poner en 0 o en 1 a un bit en específico de un determinado registro:
+; Los mnemonicos anteriores puede poner en 0 o en 1 a un bit en especÃ­fico de un determinado registro:
 ; BCF = Bit Clear File = Limpiar Bit de Registro 
 ; BSF = Bit Set File = Poner en 1 un Bit del Registro 
 ; El registro puede ser, por ejemplo, TRISD. Como sabemos, el TRISD tiene 8 bits:
@@ -37,12 +37,12 @@
 ;  0   1   2   3   4   5   6   7
 ;Ejemplos:
 ; - Queremos poner en 1 al TRISD el bit 1 
-; Entonces el código sería BST TRISD, 1 <- cabe recalcar que el 1 a la derecha coma hace referencia al bit que se desea modificar su estado ne 0 o 1
+; Entonces el cÃ³digo serÃ­a BST TRISD, 1 <- cabe recalcar que el 1 a la derecha coma hace referencia al bit que se desea modificar su estado ne 0 o 1
 ; - Queremos poner en 0 al TRISD el bit 4
-; Entonces el código sería BCT TRISD, 4 <- cabe recalcar que el 4 a la derecha coma hace referencia al bit que se desea modificar su estado ne 0 o 1
+; Entonces el cÃ³digo serÃ­a BCT TRISD, 4 <- cabe recalcar que el 4 a la derecha coma hace referencia al bit que se desea modificar su estado ne 0 o 1
 ; Con el mnemonico MOVF, podemos hacer un manejo de los movimientos de los datos entre los registro correspondientes 
 ; por ejemplo MOVF PORTD , W -> El valor de PORTD se mueve a W  
-;********** RESOLUCIÓN ****************
+;********** RESOLUCIÃ“N ****************
     CBLOCK 0x00
 	variablePrueba
     ENDC 
@@ -58,7 +58,7 @@ MAIN:
     ;Con el mnemonico SETF ponemos en 0XFF a todo un registro o variable
     SETF TRISD ;Movemos el dato 0xff hacia el registro TRISD
     SETF TRISB ;Movemos el dato 0xff hacie el registro TRISB
-    ;Con el mnemonico BCF o BSF podemos poner en 0 o 1 un bit de un registro específico
+    ;Con el mnemonico BCF o BSF podemos poner en 0 o 1 un bit de un registro especÃ­fico
     BCF TRISC,0 ; ponemos en 0 al TRIS RC0 para que quede como salida
     GOTO START ; Vamos a la direccion con el alias de START 
 START:
@@ -66,14 +66,15 @@ START:
     MOVWF variablePrueba; El dato en W lo movemos a variablePrueba
     MOVF PORTB, W; Movemos el valor de PUERTO B al registro W
     CPFSEQ variablePrueba; Comprobamos si el dato en W es igual al dato en variablePrueba 
-    GOTO DIF; Si no son iguales viene a esta linea y va a la dirección de memoria de programa con el alias DIF, esto es una etiqueta 
-    GOTO IGUAL; Si los datos comparados son iguales, irá a la dirección de memoria de progrma con el alias IGUAL
-DIF: ;Etiqueta para realizar la función correspondiente si los datos de W y variablePrueba son iguales 
+    GOTO DIF; Si no son iguales viene a esta linea y va a la direcciÃ³n de memoria de programa con el alias DIF, esto es una etiqueta 
+    GOTO IGUAL; Si los datos comparados son iguales, irÃ¡ a la direcciÃ³n de memoria de progrma con el alias IGUAL
+DIF: ;Etiqueta para realizar la funciÃ³n correspondiente si los datos de W y variablePrueba son iguales 
     BCF LATC, 0;
-    GOTO START; Vamos a la dirección de memoria de programa con el alias START 
+    GOTO START; Vamos a la direcciÃ³n de memoria de programa con el alias START 
 IGUAL:; Etiqueta para realizar la funcion correspondiente para cuando W y variablePrueba sean iguales 
     BSF LATC, 0;
-    GOTO START; Vamos a la dirección de memoria de programa con el alias START
+    GOTO START; Vamos a la direcciÃ³n de memoria de programa con el alias START
+    ORG 0x0C0		
 INT_ALTA_PRIOR:
     RETFIE 
     ORG 0X0F0

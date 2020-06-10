@@ -27,11 +27,11 @@
 
 ;***************** EJERCICIO DECF F, D, INCF F,D con CPFSEQ F, ADDWF F con el PIC18F4550  ****************************
 ; Emplearemos los mnemonicos presentadados en los capitulos anteriores para poder ser aplicado en un ejercicio
-; que decrementar· el valor de un determinado registro y comprar· si su valor es igual a otro para poder hacer o no una acciÛn
-; Este procedimiento se realizar· de manera indefinida, aumentando en 1 la cuenta a decrementar, es decir:
-; Empezaremos con un dato literal decimal que ser· decrementado hasta cierto punto, llegado a ese punto, el valor de dato inicial se incrementar· en 1
+; que decrementar√° el valor de un determinado registro y comprar√° si su valor es igual a otro para poder hacer o no una acci√≥n
+; Este procedimiento se realizar√° de manera indefinida, aumentando en 1 la cuenta a decrementar, es decir:
+; Empezaremos con un dato literal decimal que ser√° decrementado hasta cierto punto, llegado a ese punto, el valor de dato inicial se incrementar√° en 1
 ; para iniciar de nuevo el decremento respectivo.
-;********** RESOLUCI”N ****************
+;********** RESOLUCI√ìN ****************
     CBLOCK 0x00
 	variablePrueba; Mantenemos nuestra variable para las pruebas 
 	varSuma ;Creamos una variable de suma
@@ -47,24 +47,25 @@
 MAIN:
     CLRF TRISD ; Movemos el dato 0x00 en TRISD haciendo que sea salida
     CLRF varSuma; Limpiamos el valor inicial de varSuma
-START: ; PosiciÛn en la memoria de programa con el alias START
+START: ; Posici√≥n en la memoria de programa con el alias START
     MOVLW .12; Movemos un dato literal al registro W
     ADDWF varSuma, W; Sumamos W con varSuma, cuyo valor es 0, y guardamos el resultado en W, es decir
     ;en la primera pasada del Program Counter, antes de los decrementos o incrementos W = W
     MOVWF variablePrueba; Luego movemos el dato a variablePrueba
-COMPAR:; PosiciÛn de memoria con el alias de COMPAR
-    MOVLW .5; Movemos el dato de comparaciÛn al registro W
+COMPAR:; Posici√≥n de memoria con el alias de COMPAR
+    MOVLW .5; Movemos el dato de comparaci√≥n al registro W
     CPFSEQ variablePrueba; Compraramos si W es igual a variablePrueba
     GOTO DECRE; De no ser iguales va a decrementar el valor de variablePrueba
-    GOTO INCRE; De ser iguales se ir· a incrementar a varSuma para sumar con W y hacer la compraraciÛn con un dato mayor
-    GOTO START; Volvemos a la direcciÛn de memoria de programa con el alias START
-DECRE:; PosiciÛn de memoria de programa con el alÌas DECRE
+    GOTO INCRE; De ser iguales se ir√° a incrementar a varSuma para sumar con W y hacer la compraraci√≥n con un dato mayor
+    GOTO START; Volvemos a la direcci√≥n de memoria de programa con el alias START
+DECRE:; Posici√≥n de memoria de programa con el al√≠as DECRE
     DECF variablePrueba, F;Decrementamos a variablePrueba y la guardamos en ella misma
-    GOTO COMPAR; vamos a la posiciÛn de memoria de programa con el alias COMPAR
-    ;para realizar de nuevo la comparaciÛn de los valores
-INCRE:; PosiciÛn de memoria de programa con el alias INCRE
-    INCF varSuma, F; Incrementamos a varSum y se guarda en ella misma para sumarse con W e iniciar de nuevo la conversiÛn
+    GOTO COMPAR; vamos a la posici√≥n de memoria de programa con el alias COMPAR
+    ;para realizar de nuevo la comparaci√≥n de los valores
+INCRE:; Posici√≥n de memoria de programa con el alias INCRE
+    INCF varSuma, F; Incrementamos a varSum y se guarda en ella misma para sumarse con W e iniciar de nuevo la conversi√≥n
     GOTO START ; Vamos a la posicion de memoria con el alias de START
+    ORG 0x0C0
 INT_ALTA_PRIOR:
     RETFIE 
     ORG 0X0F0

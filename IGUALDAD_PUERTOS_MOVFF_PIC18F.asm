@@ -27,11 +27,11 @@
 
 ;***************** IGUALDAD DE PUERTOS CON EL MOVFF *********************
 ; Haremos un espejo de puertos, entre el puerto B y el Puerto D
-; el dato de 8 bits introducido en el puerto B se mostrará en el puerto D usando el MOVFF
+; el dato de 8 bits introducido en el puerto B se mostrarÃ¡ en el puerto D usando el MOVFF
 ; puedes ver el otro modelo de igualdad de puertos en: 
 ; https://github.com/FranciscoMotta/Mnemonicos_ASM/blob/master/IGUALDAD_PUERTOS_MOVF_PIC18.asm
 ; donde no usamos el MOVFF y se requiere un paso adicional 
-;********** RESOLUCIÓN ****************
+;********** RESOLUCIÃ“N ****************
     CBLOCK 0x00
 	variablePrueba; Mantenemos nuestra variable para las pruebas 
 	varSuma ;Creamos una variable de suma
@@ -50,6 +50,7 @@ MAIN:
 START:
     MOVFF PORTB, LATD
     GOTO START
+    ORG 0x0C0
 INT_ALTA_PRIOR:
     RETFIE 
     ORG 0X0F0

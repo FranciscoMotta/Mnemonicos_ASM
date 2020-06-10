@@ -28,10 +28,10 @@
 ;***************** EJERCICIO CON DECFSZ F, D Y EL INCF F, D ****************************
 ;El presente ejercicio busca aplicar los conceptos aprendidos con anterioridad para el manejo 
 ; de los mnemonicos INCF F y el mnemonicos DECFSZ F, D para poder ser aplicado en un ejercicio muy simple y
-; divertido. EL ejercicio consta de la introducción de una variable para ser comprada y decrementada hasta
-; que sea 0, llegado a ese punto si inicialmenta la variable valía 5, se deberá sumar en 1 unidad para empezar
-; de nuevo con todo el proceso de decrementación y comparación
-;********** RESOLUCIÓN ****************
+; divertido. EL ejercicio consta de la introducciÃ³n de una variable para ser comprada y decrementada hasta
+; que sea 0, llegado a ese punto si inicialmenta la variable valÃ­a 5, se deberÃ¡ sumar en 1 unidad para empezar
+; de nuevo con todo el proceso de decrementaciÃ³n y comparaciÃ³n
+;********** RESOLUCIÃ“N ****************
     CBLOCK 0x00
 	variablePrueba; Mantenemos nuestra variable para las pruebas 
 	varSuma ;Creamos una variable de suma
@@ -47,24 +47,25 @@
 MAIN:
     CLRF TRISD ; Movemos el dato 0x00 en TRISD haciendo que sea salida
     CLRF varSuma; Limpiamos el valor inicial de varSuma
-START: ; Posición en la memoria de programa con el alias START
+START: ; PosiciÃ³n en la memoria de programa con el alias START
     MOVLW .3;Movemos un dato literal decimal hace W
     ADDWF varSuma, F; sumamos el valor de W con el dato de varSuma y se guarda en ella misma
 COMPAR:
     DECFSZ varSuma, F;Decrementamos el valor inicial de varSuma hasta que sea 0 y lo guardamos en ella
-    GOTO NOT_ZERO;De no ser 0 vamos a la posición de memoria de programa con el alias de NOT_ZERO
+    GOTO NOT_ZERO;De no ser 0 vamos a la posiciÃ³n de memoria de programa con el alias de NOT_ZERO
     GOTO ZERO; De ser 0 vamos a la posicion de memoria de programa con el alias de ZERO
 NOT_ZERO: 
-    CLRF LATD ; De no ser 0 mantenemos el puerto D en valor lógico 0x00
-    GOTO COMPAR;Regresamos a la comparación con el decremento
+    CLRF LATD ; De no ser 0 mantenemos el puerto D en valor lÃ³gico 0x00
+    GOTO COMPAR;Regresamos a la comparaciÃ³n con el decremento
 ZERO:
     SETF LATD ; De ser 0 ponemos el puerto en 0XFF a el puerto D
-    INCF varSuma; Sumamos en 1 a varSuma para que la siguiente comparación
+    INCF varSuma; Sumamos en 1 a varSuma para que la siguiente comparaciÃ³n
     ;sea con el valor inicial + 1
-    GOTO START; regresamos a la posición de memoria con el ALIAS START para cargar el dato de nuevo y volver a realizar la comparación
-MOSTRAR:; Posición de memoria de programa con el alias MOSTRAR 
+    GOTO START; regresamos a la posiciÃ³n de memoria con el ALIAS START para cargar el dato de nuevo y volver a realizar la comparaciÃ³n
+MOSTRAR:; PosiciÃ³n de memoria de programa con el alias MOSTRAR 
     MOVWF LATD; Movemos a LATD el dato cargado en las posiciones de memoria NO_ES_CERO y ES_CERO
     GOTO COMPAR; Regresamos a decremetar el registro
+    ORG 0x0C0
 INT_ALTA_PRIOR:
     RETFIE 
     ORG 0X0F0
