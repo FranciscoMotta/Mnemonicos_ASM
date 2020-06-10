@@ -47,9 +47,10 @@ START:
     MOVLW .240 ;Movemos un dato literal hacia el registro W
     ADDWF 0x20, F; Sumamos el valor del registro W con el valor de la pos 0x20 del registro SRAM
     MOVLW .13 ; Movemos un dato literal hacia el registro W
-    ADDWFC 0x20, W; Sumamos el valor de W + el valor de la pos 0x20 m·s el bit Carry del registro Status 
+    ADDWFC 0x20, W; Sumamos el valor de W + el valor de la pos 0x20 m√°s el bit Carry del registro Status 
     MOVWF LATD; Movemos el dato al registro W
     GOTO START;
+    ORG OXOCO
 INT_ALTA_PRIOR:
     RETFIE 
     ORG 0X0F0
