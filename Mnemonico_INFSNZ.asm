@@ -32,9 +32,9 @@
 ; es decir, incrementar el registro, saltar si no es cero.
 ; EJEMPLO:
 ;  INFSNZ REGISTRO, F; incrementa en 1 al registro y lo guarda en ella misma
-;  GOTO ZERO; Vendr· ac· cada que sea 0
-;  GOTO NOT_ZERO; Vendr· ac· cada que no sea 0 
-;********** RESOLUCI”N ****************
+;  GOTO ZERO; Vendr√° ac√° cada que sea 0
+;  GOTO NOT_ZERO; Vendr√° ac√° cada que no sea 0 
+;********** RESOLUCI√ìN ****************
     CBLOCK 0x00
 	variablePrueba; Mantenemos nuestra variable para las pruebas 
 	varSuma ;Creamos una variable de suma
@@ -55,15 +55,16 @@ START:
     MOVWF varSuma; Movemos el dato hacia varSuma
 COMPAR:
     INFSNZ varSuma, F ; Incrementamos a varSuma, la guardamos en ella y veremos si es 0 o no para hacer el salto
-    GOTO ZERO; Si es 0 vamos a la posiciÛn de memoria con el alias ZERO
-    GOTO NOT_ZERO; Si es 0 vamos a la posiciÛn de memoria con el alias NOT_ZERO 
+    GOTO ZERO; Si es 0 vamos a la posici√≥n de memoria con el alias ZERO
+    GOTO NOT_ZERO; Si es 0 vamos a la posici√≥n de memoria con el alias NOT_ZERO 
 ZERO:
     SETF LATD; De ser 0, ponemos en 0xFF al puerto D 
-    GOTO START; Regresamos a la posiciÛn de memoria con el alias START para iniciar todo de nuevo.
+    GOTO START; Regresamos a la posici√≥n de memoria con el alias START para iniciar todo de nuevo.
 NOT_ZERO:
     CLRF LATD; Si no es 0, limpiaremos todo el puerto D con el valor de 0x00
-    GOTO COMPAR; Luego vamos a la posiciÛn de memoria con el alias COMPAR para iniciar
-    ; la comparaciÛn
+    GOTO COMPAR; Luego vamos a la posici√≥n de memoria con el alias COMPAR para iniciar
+    ; la comparaci√≥n
+    ORG 0X0C0
 INT_ALTA_PRIOR:
     RETFIE 
     ORG 0X0F0
