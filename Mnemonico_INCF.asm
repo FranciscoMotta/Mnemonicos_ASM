@@ -27,11 +27,11 @@
 
 ;***************** MNEMONICO INCF F, D con el PIC18F4550  ****************************
 ; Los mnemonicos anteriormente mencionados tienen la particularidad incrementar (INCF) un determinado
-; registro, variable u operando para realizar diversas actividades en el manejo del código
+; registro, variable u operando para realizar diversas actividades en el manejo del cÃ³digo
 ; La F a la izquierda de la primera coma hace referencia al registro que se va a incrementar y la D a la izquierda
 ; de la misma hace referencia en donde se va a guardar el dato decrementado, y puede ser W, para guardarse en el registro W o F para 
 ; guardarse en el mismo registro decrementado
-;********** RESOLUCIÓN ****************
+;********** RESOLUCIÃ“N ****************
     CBLOCK 0x00
 	variablePrueba
     ENDC 
@@ -51,7 +51,8 @@ START:
     INCF variablePrueba, F ;Incrementamos a variablePrueba y lo guardamos en ella misma  
     MOVF variablePrueba, W; Luego movemos el dato de variablePrueba en W
     MOVWF LATD; Y el dato en W lo llevamos a LATD
-    GOTO START; Volvemos a la dirección de memoria de programa con el alias START
+    GOTO START; Volvemos a la direcciÃ³n de memoria de programa con el alias START
+    ORG 0X0C0
 INT_ALTA_PRIOR:
     RETFIE 
     ORG 0X0F0
