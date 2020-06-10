@@ -26,11 +26,11 @@
   CONFIG  MCLRE = ON            ; MCLR Pin Enable bit (MCLR pin enabled; RE3 input pin disabled)
 
 ;***************** MNEMONICO MOVFF FF, FD ******************************
-; El presente mnemonico es muy práctico pues permite mover los valores de 2
-; registros entre sí, esto nos ayuda a evitar estar moviendo el dato a W
+; El presente mnemonico es muy prÃ¡ctico pues permite mover los valores de 2
+; registros entre sÃ­, esto nos ayuda a evitar estar moviendo el dato a W
 ; Y de W hacia el registro que deseamos;
 ; MOVFF File Fuente, File Destino
-;********** RESOLUCIÓN ****************
+;********** RESOLUCIÃ“N ****************
     CBLOCK 0x00
 	variablePrueba; Mantenemos nuestra variable para las pruebas 
 	varSuma ;Creamos una variable de suma
@@ -53,7 +53,8 @@ START:
     MOVLW 0x01; movemos un dato literal hexadecimal hacia W
     ADDWF varSuma, F; Sumamos el dato de varSuma con W y lo guardamos en varSuma
     MOVFF varSuma, LATD; Movemos el dato de var Suma al registro LATD
-    GOTO START; volvemos a la posición de memoria con el alías START
+    GOTO START; volvemos a la posiciÃ³n de memoria con el alÃ­as START
+    ORG 0X0C0
 INT_ALTA_PRIOR:
     RETFIE 
     ORG 0X0F0
