@@ -25,14 +25,17 @@
   CONFIG  LPT1OSC = OFF         ; Low-Power Timer 1 Oscillator Enable bit (Timer1 configured for higher power operation)
   CONFIG  MCLRE = ON            ; MCLR Pin Enable bit (MCLR pin enabled; RE3 input pin disabled)
 
-;***************** MNEMONICO IORWF F, D ******************************
-; El presente mnemonico realizará la operación lógica OR entre un registro 
-; específico y el registro de trabajo W
+;***************** MNEMONICO MOVFF FF, FD ******************************
+; El presente mnemonico es muy práctico pues permite mover los valores de 2
+; registros entre sí, esto nos ayuda a evitar estar moviendo el dato a W
+; Y de W hacia el registro que deseamos;
+; MOVFF File Fuente, File Destino
 ;********** RESOLUCIÓN ****************
     CBLOCK 0x00
 	variablePrueba; Mantenemos nuestra variable para las pruebas 
 	varSuma ;Creamos una variable de suma
     ENDC 
+    
     ORG 0X000
     GOTO MAIN
     ORG 0X008
@@ -45,20 +48,11 @@ MAIN:
     CLRF varSuma; Limpiamos la variable varSuma para iniciarlo con 0x00
     CLRF LATD; Limpiamos el registro LATD
 START:
-    MOVLW 0XAA; Movemos el dato literal hexadecimal al registro W
-    MOVWF varSuma; Movemos el dato de W hacia la variable varSuma
-SUMA:
-    MOVLW 0X55; Movemos el dato literal hexadecimal hacia el registro W
-    IORWF varSuma, W; Hacemos el OR lógico entre el dato en varSuma y el dato de W
-    ; Luego guardamos el resultado en W
-    MOVWF LATD;Movemos el dato de W hacia el registro LATD para ser mostrado
-    ; RESUMEN
-    ; W = 0X55 = 0101 0101
-    ; varSuma = W = 0x55 = 0101 0101
-    ; W = 0xAA = 1010 1010
-    ; W = W(dato anterior) OR varSuma = 0101 0101 + 1010 1010 = 1111 1111
-    ; W = 0xFF = 1111 1111
-    ; LATD = W = 0xFF
+    MOVLW 0XAC; Movemos el dato literal hexadecimal hacia W
+    MOVWF varSuma; Movemos el dato al registro varSuma
+    MOVLW 0x01; movemos un dato literal hexadecimal hacia W
+    ADDWF varSuma, F; Sumamos el dato de varSuma con W y lo guardamos en varSuma
+    MOVFF varSuma, LATD; Movemos el dato de var Suma al registro LATD
     GOTO START; volvemos a la posición de memoria con el alías START
 INT_ALTA_PRIOR:
     RETFIE 

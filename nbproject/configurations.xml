@@ -37,6 +37,7 @@
       <itemPath>Mnemonico_INFSNZ.asm</itemPath>
       <itemPath>Mnemonico_IORWF.asm</itemPath>
       <itemPath>Mnemonico_IORLW.asm</itemPath>
+      <itemPath>Mnemonico_MOVFF.asm</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
