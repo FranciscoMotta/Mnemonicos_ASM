@@ -50,7 +50,7 @@ START:
     ADDWFC 0x20, W; Sumamos el valor de W + el valor de la pos 0x20 más el bit Carry del registro Status 
     MOVWF LATD; Movemos el dato al registro W
     GOTO START;
-    ORG OXOCO
+    ORG 0X0C0
 INT_ALTA_PRIOR:
     RETFIE 
     ORG 0X0F0
