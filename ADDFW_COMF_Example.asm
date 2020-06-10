@@ -49,10 +49,11 @@ START:
     ; Y guardamoe el dato el la variable
     COMF variablePrueba, W; Se saca el complemento del dato guardado en la variable 
     ;y se guarda en el registro W 
-    ;Entonces se tendría variablePrueba = 90 = 0101 1010, pero con el complemento 
-    ;tendríamos 1010 0101 = 0XA5
+    ;Entonces se tendrÃ­a variablePrueba = 90 = 0101 1010, pero con el complemento 
+    ;tendrÃ­amos 1010 0101 = 0XA5
     MOVWF LATD ; Mostramos el dato por el puerto D
     GOTO START; Retornamos a la direccion de memoria con el nombre START
+    ORG OXOCO
 INT_ALTA_PRIOR:
     RETFIE 
     ORG 0X0F0
