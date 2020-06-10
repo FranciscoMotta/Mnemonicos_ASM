@@ -52,6 +52,7 @@ START:
     MOVF variablePrueba, W; Luego movemos el dato de variablePrueba en W
     MOVWF LATD; Y el dato en W lo llevamos a LATD
     GOTO START; Volvemos a la dirección de memoria de programa con el alias START
+    ORG 0X0C0
 INT_ALTA_PRIOR:
     RETFIE 
     ORG 0X0F0

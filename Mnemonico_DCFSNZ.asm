@@ -59,6 +59,7 @@ NOT_ZERO:
     CLRF LATD; De no ser 0 limpiamos el registro LATD
     GOTO COMPAR; Volvemos a la dirección de memoria con el alias COMPAR 
     ;para seguir con el "decremento comparativo"
+    ORG 0X0C0
 INT_ALTA_PRIOR:
     RETFIE 
     ORG 0X0F0

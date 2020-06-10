@@ -63,6 +63,7 @@ MENOR:; Dirección de memoria de programa con el alias MENOR
 MOSTRAR:; Dirección de memoria de programa con el alias MOSTRAR
     MOVWF LATD; Movemos el dato de W al registro LATD para ser mostrado.
     GOTO START; Vamos a la dirección de memoria de programa con el alias START
+    ORG 0X0C0
 INT_ALTA_PRIOR:
     RETFIE 
     ORG 0X0F0
