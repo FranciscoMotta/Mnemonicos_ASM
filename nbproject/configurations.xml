@@ -40,6 +40,7 @@
       <itemPath>Mnemonico_CPFSEQ.asm</itemPath>
       <itemPath>IGUALDAD_PUERTOS_MOVFF_PIC18F.asm</itemPath>
       <itemPath>Mnemonico_MULWF.asm</itemPath>
+      <itemPath>Mnemonico_MULLW.asm</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
