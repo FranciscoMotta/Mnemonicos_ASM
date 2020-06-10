@@ -59,6 +59,7 @@ MUL:
     MOVFF PRODH, LATD; Los 8 bits MSB se guarda en PRODH y los mostramos en LATD y se muestra
     MOVFF PRODL, LATB; Los 8 bits LSB se guarda en el PRODL y los mostramos en LATB y se muestra
     GOTO START; Regresamos a la posición de memoria de programa con el alias START
+    ORG 0X0C0
 INT_ALTA_PRIOR:
     RETFIE 
     ORG 0X0F0
